@@ -1,0 +1,16 @@
+{
+  "name": "Template_Github",
+  "short_name": "Template",
+  "start_url": "index.html",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#9C27B0",
+  "background_color": "#555",
+  "icons": [
+    {
+      "src": "app/img/icons/codeschool.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
