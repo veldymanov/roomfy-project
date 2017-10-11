@@ -1,0 +1,25 @@
+/******************************************
+*		Common! Stylesheet		
+*******************************************/
+//Color values
+$brandColor: #EC1B24;
+$darkTextColor: #474343;
+$lightTextColor: #FFFFFF;
+$btnBgrColor: #EBEBEB;
+
+@mixin respond-to($val, $query) {
+	@media ($val: $query) {
+		@content
+	}
+}
+
+
+//********************************************
+//	Fonts 
+//********************************************
+
+
+//********************************************
+//	Base Elements
+//********************************************
+* {box-sizing: border-box; }

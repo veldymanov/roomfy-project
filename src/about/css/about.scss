@@ -1,0 +1,26 @@
+/******************************************
+*		About! Stylesheet		
+*******************************************/
+//Color values
+$brandColor: #EC1B24;
+$darkTextColor: #474343;
+$lightTextColor: #FFFFFF;
+$btnBgrColor: #EBEBEB;
+
+@mixin respond-to($val, $query) {
+	@media ($val: $query) {
+		@content
+	}
+}
+
+@import 'header';
+
+//********************************************
+//	Fonts 
+//********************************************
+
+
+//********************************************
+//	Base Elements
+//********************************************
+* {box-sizing: border-box; }
