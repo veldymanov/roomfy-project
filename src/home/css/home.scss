@@ -35,7 +35,7 @@ $btnBgrColor: #EBEBEB;
 @font-face {
   font-family: circular-std-book;
 	src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
-  font-weight: italic;    
+  font-style: italic;    
 }
 
 
@@ -46,26 +46,90 @@ $btnBgrColor: #EBEBEB;
 
 body {
 	font-family: circular-std-book, sans-serif;
+	font-size: 18px;
 	margin: 0 auto;
 	max-width: 1440px;
 	padding: 0;
+}
+
+div, section {
+	margin: 0;
+	padding: 0;	
 }
 
 //********************************************
 //	Main
 //********************************************
 .m-head {
-
+	background-color: #ff7800;
+	p {
+		color: #ffffff;
+		margin: 0;
+		padding: 9px 0 6px 0;
+		text-align: center;
+	}
 }
 
 .form {
+	background: url(../img/images/bg-search.z.png) no-repeat;
+	background-size: contain;
+	height: 851px;
+	position: relative;
+	width: auto;
+	h2 {
+		color: #ffffff;
+		font-size: 60px;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		top: 80px;
+		transform: translate(-50%);
+		width: 511px;		
+	}
+	div {
+		display: flex;
+		left: 50%;	
+		position: absolute;
+		top: 280px;
+		transform: translate(-50%);
+		input {
+			border: solid 1px #c6c6c6;
+			border-radius: 100px;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+			font-size: 24px;
+			padding: 18px 0 17px 40px;
+			&::placeholder {
+				color: #434343;
+				opacity: 0.35;
+			}
+		}
+		#search {
+			margin-right: 22px;
+			width: 477px;
+		}
+		#choice {
+			padding-right: 10px; 
+			position: relative; 
+			width: 252px;
+			&::-webkit-calendar-picker-indicator {
+			  opacity: 0;
+			}
+			&::placeholder {
+				&:after {
+					content: "q";
+				}
+			}
 
+		}
+	}
 }
+
+
 
 .cities {
 
 }
 
 .articles {
-	
+
 }
