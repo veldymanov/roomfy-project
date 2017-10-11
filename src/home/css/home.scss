@@ -13,11 +13,30 @@ $btnBgrColor: #EBEBEB;
 	}
 }
 
+//********************************************
+//	Imports 
+//********************************************
 @import 'header';
 
 //********************************************
-//	Fonts 
+//	Fonts
 //********************************************
+@font-face {
+    font-family: circular-std-book;
+    src: url(../../common_files/fonts/CircularStd-Book.otf);
+}
+
+@font-face {
+  font-family: circular-std-book;
+	src: url(../../common_files/fonts/CircularStd-Bold.otf);
+  font-weight: bold;    
+}
+
+@font-face {
+  font-family: circular-std-book;
+	src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
+  font-weight: italic;    
+}
 
 
 //********************************************
@@ -26,38 +45,27 @@ $btnBgrColor: #EBEBEB;
 * {box-sizing: border-box;}
 
 body {
+	font-family: circular-std-book, sans-serif;
 	margin: 0 auto;
 	max-width: 1440px;
 	padding: 0;
 }
 
-.head {
-	background-color: #1b1b1b;
-	box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.28);
-	display: flex;
-	height: 77px;
-	justify-content: space-between;
-	padding: 20px 26px;
-	h1 {
-		color: #ffffff;
-		font-size: 30px;
-		margin: 0;
-	}
-	nav {
+//********************************************
+//	Main
+//********************************************
+.m-head {
 
-	}
 }
 
-.nav {
-	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+.form {
+
 }
 
-.nav-item {
-	a {
-		display: block;
-		text-decoration: none;
-	}
+.cities {
+
+}
+
+.articles {
+	
 }

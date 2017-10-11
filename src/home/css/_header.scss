@@ -1,5 +1,44 @@
+.header {
+	background-color: #1b1b1b;
+	box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.28);
+	display: flex;
+	height: 77px;
+	justify-content: space-between;
+	h1 {
+		color: #ffffff;
+		font-size: 30px;
+		margin: 0;
+		padding: 20px 0 19px 26px;
+		width: 120px;
+	}
+	nav {
 
-p a{
-  color: #777;
+	}
 }
 
+.nav {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 14px 10px 16px 0;
+}
+
+.nav-item {	
+	height: 47px;
+	margin-left: 3px;
+	width: 132px;
+	a {
+		color: #ffffff;
+		display: block;
+		font-size: 18px;
+		height: 100%;
+		padding: 13px 21px;
+		text-align: center;
+		text-decoration: none;
+		width: 100%;
+		&.active {
+			border-radius: 23.5px;
+			background-color: #ff7800;
+		}
+	}
+}
