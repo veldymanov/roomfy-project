@@ -309,7 +309,7 @@ ul.links {
 					background-color: #ffffff;
 					border: 1px solid #dbdde0;
 					color: #6e6e6e;
-					padding: 13px 20px;
+					padding: 11px 20px;
 					&.active {
 						background-color: #0d97dc;
 						color: #ffffff;
@@ -346,21 +346,27 @@ ul.links {
 	color: #434343;
 	cursor: pointer;
 	font-size: 50px;
+	height: 40px;
 	opacity: 0.2;
 	position: absolute;
 	text-decoration: none;
 	top: 30%;
-	z-index: 1;
+	width: 25px;
 	&.is-active {
 		opacity: 1;
 	}	
 }
 
 .prev {
-	right: -40px;	
+	background:  url(../img/icons/roomfy-slider.png) no-repeat;
+	background-size: contain;
+	right: -40px;
+	transform: rotate(180deg);	
 }
 
 .next{
+	background:  url(../img/icons/roomfy-slider.png) no-repeat;
+	background-size: contain;
 	left: -40px;
 }
 
