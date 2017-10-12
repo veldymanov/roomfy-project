@@ -2,8 +2,7 @@
 <html lang="en-US">
     <head>        
         <meta charset='utf-8'/>
-        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'/>
-        <meta name="theme-color" content="#9C27B0">
+        <meta name='viewport' content='width=device-width, initial-scale=1'/>
         <link rel='manifest' href='manifest.json' />
         <!--link rel='icon' href='' type="image/png"/-->
         <link href='home/css/home.css' rel='stylesheet' type='text/css'/>
@@ -13,51 +12,62 @@
 		</style>
     </head>
     <body>
-        <header class="header">
-            <h1>Roomfy</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="active" href="">Aanmenden</a></li>
-                    <li class="nav-item"><a href="">Inloggen</a></li>
-                </ul>
-            </nav>
-        </header>
-		<main>
-              <section class="m-head">
-                <p>Gratis jouw karmer aanbieden of huren!</p>  
-              </section>
+      <header class="header">
+          <h1>Roomfy</h1>
+          <nav>
+              <ul class="nav">
+                <li class="nav-item"><a class="active" href="">Aanmenden</a></li>
+                <li class="nav-item"><a href="">Inloggen</a></li>
+              </ul>
+          </nav>
+      </header>
+  		<main>
+        <section class="m-head">
+          <p>Gratis jouw karmer aanbieden of huren!</p>  
+        </section>
 
-              <section class="form">
-                  <h2>100% eerlijk huren en verhuren</h2>
-                  <div>
-                      <input id="search" type="text" placeholder="Plaats, omgeving, etc">
-                      <input id="choice" type="text" list="choose" placeholder="Max. huurprijs">
-                      <datalist id="choose">
-                        <option>Max 1</option> 
-                        <option label="Max 2">Max 2</option> 
-                        <option label="midpoint">Max 3</option> 
-                        <option>Max 4</option>
-                        <option>Max 5</option> 
-                      </datalist>
-                  </div>
-              </section>
+        <section class="form">
+            <h2>100% eerlijk huren en verhuren</h2>
+            <div>
+              <div class="search">
+                <input id="search" type="text" placeholder="Plaats, omgeving, etc">
+              </div>
+              <div class="choice"> 
+                <input id="choice" type="text" placeholder="Max. huurprijs">
+                <button></button>
+              </div>  
+            </div>
+        </section>
 
-              <section class="screenshots">
-                  
-              </section>
-              <section class="cities">
-                  
-              </section>
-              <article class="articles">
-                  
-              </article>
-
-
-        </main>
-
-        <footer>
+        <section class="screenshots">
+            <div class="shot1">
+               <h3>Woningzoekende?</h3>
+               <p>Direct gratis contact met de eingenaar</p>
+               <figure>
+                  <img src="home/img/images/screenshot.png">
+               </figure>
+            </div>
+            <div class="shot2">
+               <h3>Karmer verhuren?</h3>
+               <p>Vind je nieuwe huisgenoot of huurder</p>
+               <figure>
+                  <img src="home/img/images/screenshot.png">
+               </figure>              
+            </div>
+        </section>
+        <section class="cities">
             
-        </footer>
+        </section>
+        <article class="articles">
+            
+        </article>
+
+
+      </main>
+
+    <footer>
+        
+    </footer>
 
         
     </body>
