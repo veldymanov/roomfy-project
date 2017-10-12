@@ -22,7 +22,6 @@ html, body {
   font-family: circular-std-book, sans-serif;
   font-size: 18px;
   margin: 0 auto;
-  max-width: 1440px;
   min-width: 525px;
   padding: 0; }
 
@@ -133,6 +132,7 @@ ul.links {
         border-radius: 100px;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
         font-size: 24px;
+        outline: none;
         padding: 18px 0 17px 30px; }
         .form > div div input::placeholder {
           color: #434343;
@@ -140,9 +140,6 @@ ul.links {
         @media (max-width: 550px) {
           .form > div div input {
             padding: 8px 0 8px 30px; } }
-        @media (max-width: 360px) {
-          .form > div div input {
-            padding: 4px 0 4px 30px; } }
     @media (max-width: 800px) {
       .form > div {
         flex-wrap: wrap;
@@ -151,9 +148,6 @@ ul.links {
     @media (max-width: 700px) {
       .form > div {
         top: 150px; } }
-    @media (max-width: 480px) {
-      .form > div {
-        top: 100px; } }
 
 .search::before {
   background: url(../img/icons/search-icon.z.svg) no-repeat;

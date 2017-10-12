@@ -44,7 +44,6 @@ html, body {
 	font-family: circular-std-book, sans-serif;
 	font-size: 18px;
 	margin: 0 auto;
-	max-width: 1440px;
 	min-width: 525px;
 	padding: 0;
 }
@@ -136,6 +135,7 @@ ul.links {
 				border-radius: 100px;
 				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 				font-size: 24px;
+				outline: none;
 				padding: 18px 0 17px 30px;
 				&::placeholder {
 					color: #434343;
@@ -143,9 +143,6 @@ ul.links {
 				}
 				@include respond-to(max-width, 550px){
 					padding: 8px 0 8px 30px;	
-				}
-				@include respond-to(max-width, 360px){
-					padding: 4px 0 4px 30px;	
 				}			
 			}
 		}
@@ -156,10 +153,7 @@ ul.links {
 		}
 		@include respond-to(max-width, 700px){
 			top: 150px;		
-		}
-		@include respond-to(max-width, 480px){
-			top: 100px;		
-		}			
+		}		
 	}
 }
 
@@ -289,7 +283,6 @@ ul.links {
 .cities {
 	background-color: #fbfbfb;
 	padding: 0 61px 96px 61px;
-//	height: 725px;
 	header {
 		display: flex;
 		flex-wrap: wrap;
@@ -317,8 +310,6 @@ ul.links {
 					border: 1px solid #dbdde0;
 					color: #6e6e6e;
 					padding: 13px 20px;
-				//	text-align: center;
-				//	width: 100%;
 					&.active {
 						background-color: #0d97dc;
 						color: #ffffff;
@@ -363,9 +354,6 @@ ul.links {
 	&.is-active {
 		opacity: 1;
 	}	
-	&:hover, &:active, &:focus{
-		//color: 1;
-	}
 }
 
 .prev {
@@ -383,7 +371,6 @@ ul.links {
 	height: 100%;
 	list-style-type: none;
 	padding: 0px;
-//	position: relative;
 }
 
 .touch-list-item {
