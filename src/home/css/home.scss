@@ -419,6 +419,22 @@ ul.links {
 		}
 	}
 	figure.avatar {
+		background-color: #d8d8d8;
+		border-radius: 50%;
+		bottom: 140px;
+  		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  		overflow: hidden;
+  		outline: none;
+		position: absolute;
+		right: 10px;
+		picture {
+			display: block;
+			img {
+				display: block;
+				height: 52px;
+				width: 52px;
+			}
+		}
 
 	}
 }
