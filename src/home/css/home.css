@@ -18,14 +18,13 @@
 * {
   box-sizing: border-box; }
 
-body {
+html, body {
   font-family: circular-std-book, sans-serif;
   font-size: 18px;
   margin: 0 auto;
   max-width: 1440px;
-  min-width: 425px;
-  padding: 0;
-  width: auto !important; }
+  min-width: 525px;
+  padding: 0; }
 
 div, section, figure {
   margin: 0;
@@ -252,16 +251,23 @@ ul.links {
   background-image: linear-gradient(38deg, #fbda61, #f76b1c); }
 
 .cities {
-  background-color: #fbfbfb; }
+  background-color: #fbfbfb;
+  padding: 0 61px 96px 61px; }
   .cities header {
     display: flex;
-    padding: 61px; }
+    flex-wrap: wrap;
+    padding: 61px 0; }
+    @media (max-width: 1055px) {
+      .cities header {
+        justify-content: center; } }
     .cities header h2 {
       color: #434343;
       font-size: 36px;
       font-weight: bold;
-      text-align: left;
       padding-right: 54px; }
+      @media (max-width: 1055px) {
+        .cities header h2 {
+          padding: 0; } }
     .cities header nav .nav-item {
       height: 47px;
       margin-left: 19px;
@@ -283,9 +289,9 @@ ul.links {
           width: auto; } }
 
 .touch-box {
-  padding: 0 90px;
-  position: relative;
-  overflow: hidden; }
+  height: 442px;
+  margin: 0;
+  position: relative; }
 
 .prev, .next {
   background: transparent;
@@ -295,32 +301,30 @@ ul.links {
   opacity: 0.3;
   position: absolute;
   text-decoration: none;
-  top: 30%; }
+  top: 30%;
+  z-index: 1; }
   .prev.is-active, .next.is-active {
     opacity: 0.8; }
   .prev:hover, .prev:active, .prev:focus, .next:hover, .next:active, .next:focus {
     opacity: 1; }
 
 .prev {
-  right: 10px; }
+  right: -50px; }
 
 .next {
-  left: 10px; }
+  left: -10px; }
 
 .touch-list {
   height: 100%;
   list-style-type: none;
-  margin: 0 0 96px 0;
-  padding: 0px;
-  position: relative; }
+  padding: 0px; }
 
 .touch-list-item {
-  border: 1px solid grey;
   border-radius: 30px;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
   height: 442px;
   overflow: hidden;
-  padding: 0;
+  margin: 0;
   position: relative;
   width: 366px; }
   .touch-list-item figure.main-img picture {
@@ -341,9 +345,15 @@ ul.links {
       bottom: 20px;
       position: absolute; }
       .touch-list-item figure.main-img figcaption div::after {
-        content: "Q";
+        background: url(../img/icons/opened-door-icon.svg) no-repeat;
+        background-size: contain;
+        content: " ";
+        bottom: -10px;
+        height: 40px;
+        opacity: 0.8;
+        position: absolute;
         right: -275px;
-        position: absolute; }
+        width: 35px; }
 
 .articles {
   display: flex;

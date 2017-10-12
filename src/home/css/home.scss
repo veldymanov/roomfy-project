@@ -40,14 +40,13 @@ $btnBgrColor: #EBEBEB;
 //********************************************
 * {box-sizing: border-box;}
 
-body {
+html, body {
 	font-family: circular-std-book, sans-serif;
 	font-size: 18px;
 	margin: 0 auto;
 	max-width: 1440px;
-	min-width: 425px;
+	min-width: 525px;
 	padding: 0;
-	width: auto !important;
 }
 
 div, section, figure {
@@ -288,19 +287,25 @@ ul.links {
 //******************
 .cities {
 	background-color: #fbfbfb;
+	padding: 0 61px 96px 61px;
 //	height: 725px;
 	header {
 		display: flex;
-		padding: 61px;
+		flex-wrap: wrap;
+		padding: 61px 0;
+		@include respond-to(max-width, 1055px){
+			justify-content: center;
+		}	
 		h2 {
 			color: #434343;
 			font-size: 36px;
 			font-weight: bold;
-			text-align: left;
 			padding-right: 54px;
+			@include respond-to(max-width, 1055px){
+				padding: 0;
+			}
 		}
 		nav {
-
 			.nav-item {	
 				height: 47px;
 				margin-left: 19px;
@@ -334,10 +339,9 @@ ul.links {
 //	Touch Box
 //**************************
 .touch-box {
-//	height: 100%;
-	padding: 0 90px;
+	height: 442px;
+	margin: 0 ;
 	position: relative;
-	overflow: hidden;
 }
 
 //---------------------------
@@ -352,6 +356,7 @@ ul.links {
 	position: absolute;
 	text-decoration: none;
 	top: 30%;
+	z-index: 1;
 	&.is-active{
 		opacity: 0.8;
 	}	
@@ -361,11 +366,11 @@ ul.links {
 }
 
 .prev {
-	right: 10px;	
+	right: -50px;	
 }
 
 .next{
-	left: 10px;
+	left: -10px;
 }
 
 //---------------------------
@@ -374,18 +379,16 @@ ul.links {
 .touch-list {
 	height: 100%;
 	list-style-type: none;
-	margin: 0 0 96px 0;
 	padding: 0px;
-	position: relative;
+//	position: relative;
 }
 
 .touch-list-item {
-	border: 1px solid grey;
 	border-radius: 30px;
 	box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
 	height: 442px;
 	overflow: hidden;
-	padding: 0;
+	margin: 0;
 	position: relative;
 	width: 366px;
 	figure.main-img {
@@ -412,9 +415,15 @@ ul.links {
 				bottom: 20px;
 				position: absolute;
 				&::after {
-					content: "Q";
-					right: -275px;
+					background: url(../img/icons/opened-door-icon.svg) no-repeat; 
+					background-size: contain;	
+					content: " ";
+					bottom: -10px;  
+					height: 40px;				
+					opacity: 0.8;
 					position: absolute;
+					right: -275px;				
+					width: 35px;	
 				}
 			}
 		}
