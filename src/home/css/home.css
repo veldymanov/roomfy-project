@@ -3,16 +3,16 @@
 *******************************************/
 @font-face {
   font-family: circular-std-book;
-  src: url("../../common_files/fonts/CircularStd-Book.otf"); }
+  src: url(../../common_files/fonts/CircularStd-Book.otf); }
 
 @font-face {
   font-family: circular-std-book;
-  src: url("../../common_files/fonts/CircularStd-Bold.otf");
+  src: url(../../common_files/fonts/CircularStd-Bold.otf);
   font-weight: bold; }
 
 @font-face {
   font-family: circular-std-book;
-  src: url("../../common_files/fonts/CircularStd-BookItalic.otf");
+  src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
   font-style: italic; }
 
 * {
@@ -289,31 +289,30 @@ ul.links {
         .cities header nav .nav-item {
           width: auto; } }
 
-.touch-box {
-  height: 442px;
-  margin: 0;
+.touch-panel {
   position: relative; }
+  .touch-panel .touch-box {
+    height: 442px;
+    margin: 0; }
 
 .prev, .next {
   background: transparent;
   color: #434343;
   cursor: pointer;
   font-size: 50px;
-  opacity: 0.3;
+  opacity: 0.2;
   position: absolute;
   text-decoration: none;
   top: 30%;
   z-index: 1; }
   .prev.is-active, .next.is-active {
-    opacity: 0.8; }
-  .prev:hover, .prev:active, .prev:focus, .next:hover, .next:active, .next:focus {
     opacity: 1; }
 
 .prev {
-  right: -50px; }
+  right: -40px; }
 
 .next {
-  left: -10px; }
+  left: -40px; }
 
 .touch-list {
   height: 100%;

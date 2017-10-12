@@ -47,6 +47,7 @@ var touchslider = {
 			 */
 			touchslider.width = x;
 			touchslider.colWidth = cellWidth + padding;
+			touchslider.padding = padding;
 				
 			try {
 				//Touch events check
@@ -228,7 +229,7 @@ var touchslider = {
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
 			$('.js-prev').addClass('is-active');
-		} else if (Math.abs(x) === this.width - parseInt(elem.parent().width(), 10) ){
+		} else if (Math.abs(x) === this.width - parseInt(elem.parent().width(), 10) - parseInt(this.padding/2, 10)){
 			$('.js-prev').removeClass('is-active');
 			$('.js-next').addClass('is-active');
 		} else {

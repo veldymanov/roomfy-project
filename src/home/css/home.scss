@@ -19,18 +19,18 @@ $btnBgrColor: #EBEBEB;
 //********************************************
 @font-face { 
 	font-family: circular-std-book;
-	src: url("../../common_files/fonts/CircularStd-Book.otf");
+	src: url(../../common_files/fonts/CircularStd-Book.otf);
 }
 
 @font-face {
   	font-family: circular-std-book;
-	src: url("../../common_files/fonts/CircularStd-Bold.otf");
+	src: url(../../common_files/fonts/CircularStd-Bold.otf);
   	font-weight: bold;    
 }
 
 @font-face {
   	font-family: circular-std-book;
-	src: url("../../common_files/fonts/CircularStd-BookItalic.otf");
+	src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
   	font-style: italic;    
 }
 
@@ -337,12 +337,14 @@ ul.links {
 }
 
 //*************************
-//	Touch Box
+//	Touch Panel
 //**************************
-.touch-box {
-	height: 442px;
-	margin: 0 ;
+.touch-panel {
 	position: relative;
+	.touch-box {
+		height: 442px;
+		margin: 0 ;
+	}
 }
 
 //---------------------------
@@ -353,25 +355,25 @@ ul.links {
 	color: #434343;
 	cursor: pointer;
 	font-size: 50px;
-	opacity: 0.3;
+	opacity: 0.2;
 	position: absolute;
 	text-decoration: none;
 	top: 30%;
 	z-index: 1;
-	&.is-active{
-		opacity: 0.8;
+	&.is-active {
+		opacity: 1;
 	}	
 	&:hover, &:active, &:focus{
-		opacity: 1;
+		//color: 1;
 	}
 }
 
 .prev {
-	right: -50px;	
+	right: -40px;	
 }
 
 .next{
-	left: -10px;
+	left: -40px;
 }
 
 //---------------------------
