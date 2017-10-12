@@ -358,3 +358,5 @@ ul.links {
         opacity: 0.6;
         padding-right: 10px;
         width: 31px; }
+        .footer div.reach-out ul.socials li a:hover {
+          opacity: 1; }

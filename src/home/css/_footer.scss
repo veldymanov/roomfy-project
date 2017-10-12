@@ -58,7 +58,10 @@
 					height: 31px;
 					opacity: 0.6;
 					padding-right: 10px;
-					width: 31px;		  
+					width: 31px;
+					&:hover {
+						opacity: 1;
+					}		  
 				}
 			}
 		}
