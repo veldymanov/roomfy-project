@@ -17,7 +17,7 @@ $btnBgrColor: #EBEBEB;
 //********************************************
 //	Fonts
 //********************************************
-@font-face {
+@font-face { 
 	font-family: circular-std-book;
 	src: url(../../common_files/fonts/CircularStd-Book.otf);
 }
@@ -233,6 +233,7 @@ ul.links {
 //	Section.screenshots
 //********************
 .screenshots {
+	color: #ffffff;
 	display: flex;
 	@include respond-to(max-width, 1050px){
 		flex-wrap: wrap;			

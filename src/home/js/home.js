@@ -299,5 +299,5 @@ jQuery(document).ready(function(){
    //------------------------------------------
 	//	Initialize touchslider
 	//-------------------------------------------
-	touchslider.createSlidePanel('.js-touch-list', 366, 25);
+	touchslider.createSlidePanel('.js-touch-list', 366, 30);
 });

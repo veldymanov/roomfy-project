@@ -211,6 +211,7 @@ ul.links {
     content: "q"; }
 
 .screenshots {
+  color: #ffffff;
   display: flex; }
   @media (max-width: 1050px) {
     .screenshots {
