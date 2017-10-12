@@ -32,13 +32,13 @@
 	margin-left: 3px;
 	width: 132px;
 	a {
+		border-radius: 23.5px;
 		color: #ffffff;
 		height: 100%;
 		padding: 13px 21px;
 		text-align: center;
 		width: 100%;
 		&.active {
-			border-radius: 23.5px;
 			background-color: #ff7800;
 		}
 		@include respond-to(max-width, 480px){

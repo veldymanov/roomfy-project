@@ -45,8 +45,9 @@ body {
 	font-size: 18px;
 	margin: 0 auto;
 	max-width: 1440px;
-	min-width: 320px;
+	min-width: 425px;
 	padding: 0;
+	width: auto !important;
 }
 
 div, section, figure {
@@ -287,8 +288,142 @@ ul.links {
 //******************
 .cities {
 	background-color: #fbfbfb;
-	height: 725px;
+//	height: 725px;
+	header {
+		display: flex;
+		padding: 61px;
+		h2 {
+			color: #434343;
+			font-size: 36px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 54px;
+		}
+		nav {
+
+			.nav-item {	
+				height: 47px;
+				margin-left: 19px;
+				width: auto;
+				a {
+					border-radius: 100px;
+					background-color: #ffffff;
+					border: 1px solid #dbdde0;
+					color: #6e6e6e;
+					padding: 13px 20px;
+				//	text-align: center;
+				//	width: 100%;
+					&.active {
+						background-color: #0d97dc;
+						color: #ffffff;
+					}
+					@include respond-to(max-width, 480px){
+						padding: 13px 10px;
+					}
+
+				}
+				@include respond-to(max-width, 480px){
+					width: auto;	
+				}	
+			}
+		}
+	}
 }
+
+//*************************
+//	Touch Box
+//**************************
+.touch-box {
+//	height: 100%;
+	padding: 0 90px;
+	position: relative;
+	overflow: hidden;
+}
+
+//---------------------------
+//	Touch Buttons: Prev, Next
+//---------------------------
+.prev, .next{
+	background: transparent;
+	color: #434343;
+	cursor: pointer;
+	font-size: 50px;
+	opacity: 0.3;
+	position: absolute;
+	text-decoration: none;
+	top: 30%;
+	&.is-active{
+		opacity: 0.8;
+	}	
+	&:hover, &:active, &:focus{
+		opacity: 1;
+	}
+}
+
+.prev {
+	right: 10px;	
+}
+
+.next{
+	left: 10px;
+}
+
+//---------------------------
+//	Touch List
+//---------------------------
+.touch-list {
+	height: 100%;
+	list-style-type: none;
+	margin: 0 0 96px 0;
+	padding: 0px;
+	position: relative;
+}
+
+.touch-list-item {
+	border: 1px solid grey;
+	border-radius: 30px;
+	box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
+	height: 442px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 366px;
+	figure.main-img {
+		picture {
+			display: block;
+			img {
+				display: block;
+				height: 272px;
+				width: 366px;
+			}
+		}
+		figcaption {
+			color: #434343;
+			padding: 10px 22px 0 27px;
+			
+			h3{
+				margin: 10px 0;
+			}
+			p {
+				background-color: transparent;
+				margin: 0;
+			}
+			div {
+				bottom: 20px;
+				position: absolute;
+				&::after {
+					content: "Q";
+					right: -275px;
+					position: absolute;
+				}
+			}
+		}
+	}
+	figure.avatar {
+
+	}
+}
+
 
 //******************
 //	Section.articles
