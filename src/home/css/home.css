@@ -1,50 +1,6 @@
 /******************************************
 *		Roomfy Main! Stylesheet		
 *******************************************/
-.header {
-  background-color: #1b1b1b;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.28);
-  display: flex;
-  height: 77px;
-  justify-content: space-between; }
-  .header h1 {
-    color: #ffffff;
-    font-size: 30px;
-    margin: 0;
-    padding: 20px 0 19px 26px;
-    width: 120px; }
-    @media (max-width: 480px) {
-      .header h1 {
-        padding-left: 5px; } }
-
-.nav {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 14px 10px 16px 0; }
-
-.nav-item {
-  height: 47px;
-  margin-left: 3px;
-  width: 132px; }
-  .nav-item a {
-    color: #ffffff;
-    display: block;
-    height: 100%;
-    padding: 13px 21px;
-    text-align: center;
-    text-decoration: none;
-    width: 100%; }
-    .nav-item a.active {
-      border-radius: 23.5px;
-      background-color: #ff7800; }
-    @media (max-width: 480px) {
-      .nav-item a {
-        padding: 13px 10px; } }
-  @media (max-width: 480px) {
-    .nav-item {
-      width: auto; } }
-
 @font-face {
   font-family: circular-std-book;
   src: url(../../common_files/fonts/CircularStd-Book.otf); }
@@ -70,9 +26,61 @@ body {
   min-width: 320px;
   padding: 0; }
 
-div, section {
+div, section, figure {
   margin: 0;
   padding: 0; }
+
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  ul.links li a {
+    display: block;
+    height: 100%;
+    text-decoration: none; }
+
+.header {
+  background-color: #1b1b1b;
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.28);
+  display: flex;
+  height: 77px;
+  justify-content: space-between; }
+  .header h1 {
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0;
+    padding: 20px 0 19px 26px;
+    width: 120px; }
+    @media (max-width: 480px) {
+      .header h1 {
+        padding-left: 5px; } }
+
+.nav {
+  display: flex;
+  padding: 14px 10px 16px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.nav-item {
+  height: 47px;
+  margin-left: 3px;
+  width: 132px; }
+  .nav-item a {
+    color: #ffffff;
+    height: 100%;
+    padding: 13px 21px;
+    text-align: center;
+    width: 100%; }
+    .nav-item a.active {
+      border-radius: 23.5px;
+      background-color: #ff7800; }
+    @media (max-width: 480px) {
+      .nav-item a {
+        padding: 13px 10px; } }
+  @media (max-width: 480px) {
+    .nav-item {
+      width: auto; } }
 
 .m-head {
   background-color: #ff7800; }
@@ -83,11 +91,13 @@ div, section {
     text-align: center; }
 
 .form {
-  background: url(../img/images/bg-search.z.png) no-repeat;
-  background-size: contain;
-  height: auto;
   position: relative;
   width: auto; }
+  .form figure picture {
+    display: block; }
+    .form figure picture img {
+      display: block;
+      width: 100%; }
   .form h2 {
     color: #ffffff;
     font-size: 60px;
@@ -215,23 +225,23 @@ div, section {
     @media (max-width: 680px) {
       .screenshots div {
         height: auto; } }
-    .screenshots div h3 {
+    .screenshots div h2 {
       font-size: 36px;
       text-align: center; }
     .screenshots div p {
       font-size: 27px;
       text-align: center; }
-    .screenshots div figure {
-      margin: 0;
-      padding: 0; }
-      .screenshots div figure img {
+    .screenshots div figure picture {
+      display: block; }
+      .screenshots div figure picture img {
+        display: block;
         left: 50%;
         height: auto;
         position: relative;
         transform: translateX(-50%);
         width: 82%; }
         @media (max-width: 680px) {
-          .screenshots div figure img {
+          .screenshots div figure picture img {
             width: 98%; } }
 
 .shot1 {
@@ -239,3 +249,112 @@ div, section {
 
 .shot2 {
   background-image: linear-gradient(38deg, #fbda61, #f76b1c); }
+
+.cities {
+  background-color: #fbfbfb;
+  height: 725px; }
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  .articles h2 {
+    color: #0d97dc;
+    flex-basis: 100%;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 63px 0 20px 0;
+    text-align: center; }
+    @media (max-width: 830px) {
+      .articles h2 {
+        margin: 40px 0 20px 0; } }
+  .articles article {
+    flex-basis: 403px;
+    padding: 20px 0; }
+    @media (max-width: 830px) {
+      .articles article {
+        padding: 0; } }
+    .articles article h3 {
+      text-align: center; }
+    .articles article p {
+      color: #6e6e6e;
+      font-size: 20px;
+      text-align: center; }
+  .articles div.btn {
+    flex-basis: 100%;
+    margin: 60px 0; }
+    @media (max-width: 830px) {
+      .articles div.btn {
+        margin: 40px 0; } }
+    .articles div.btn button {
+      background-color: #ff7800;
+      border: none;
+      border-radius: 71px;
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: bold;
+      left: 50%;
+      outline: none;
+      padding: 19px 40px 23px 40px;
+      position: relative;
+      text-align: center;
+      transform: translateX(-50%); }
+      .articles div.btn button:hover {
+        background-color: #0d97dc; }
+      @media (max-width: 830px) {
+        .articles div.btn button {
+          font-size: 24px; } }
+
+.footer {
+  border-top: 1px solid #dbdde0;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 26px; }
+  @media (max-width: 1000px) {
+    .footer {
+      flex-wrap: wrap; } }
+  .footer div {
+    flex-basis: 272px;
+    padding: 60px 0; }
+    @media (max-width: 1000px) {
+      .footer div {
+        flex-basis: 30%;
+        padding: 10px 0; } }
+    @media (max-width: 620px) {
+      .footer div {
+        flex-basis: 95%; } }
+    .footer div h3 {
+      color: #434343;
+      font-size: 24px;
+      opacity: 0.8; }
+    .footer div p {
+      color: #6e6e6e;
+      font-size: 20px;
+      opacity: 0.6; }
+    .footer div ul li a {
+      color: #6e6e6e;
+      font-size: 20px;
+      opacity: 0.6; }
+      .footer div ul li a:hover {
+        opacity: 1; }
+  .footer div.roomfy {
+    flex-basis: 461px; }
+    .footer div.roomfy h2 {
+      color: #434343;
+      font-size: 36px;
+      opacity: 0.6; }
+    @media (max-width: 1000px) {
+      .footer div.roomfy {
+        flex-basis: 95%; } }
+  .footer div.reach-out ul.socials {
+    display: flex;
+    margin-top: 30px; }
+    .footer div.reach-out ul.socials li {
+      margin-right: 30px; }
+      .footer div.reach-out ul.socials li a {
+        background-color: #d8d8d8;
+        border-radius: 2px;
+        height: 31px;
+        opacity: 0.6;
+        padding-right: 10px;
+        width: 31px; }

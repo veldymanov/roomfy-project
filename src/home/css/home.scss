@@ -13,29 +13,25 @@ $btnBgrColor: #EBEBEB;
 	}
 }
 
-//********************************************
-//	Imports 
-//********************************************
-@import 'header';
 
 //********************************************
 //	Fonts
 //********************************************
 @font-face {
-    font-family: circular-std-book;
-    src: url(../../common_files/fonts/CircularStd-Book.otf);
+	font-family: circular-std-book;
+	src: url(../../common_files/fonts/CircularStd-Book.otf);
 }
 
 @font-face {
-  font-family: circular-std-book;
+  	font-family: circular-std-book;
 	src: url(../../common_files/fonts/CircularStd-Bold.otf);
-  font-weight: bold;    
+  	font-weight: bold;    
 }
 
 @font-face {
-  font-family: circular-std-book;
+  	font-family: circular-std-book;
 	src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
-  font-style: italic;    
+  	font-style: italic;    
 }
 
 
@@ -53,10 +49,28 @@ body {
 	padding: 0;
 }
 
-div, section {
+div, section, figure {
 	margin: 0;
 	padding: 0;	
 }
+
+ul.links {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		a{
+			display: block;
+			height: 100%;	
+			text-decoration: none;		
+		}
+	}
+}
+
+//********************************************
+//	Header
+//********************************************
+@import 'header';
 
 //********************************************
 //	Main
@@ -75,11 +89,17 @@ div, section {
 //	Section.form
 //******************
 .form {
-	background: url(../img/images/bg-search.z.png) no-repeat;
-	background-size: contain;
-	height: auto;//851px;
 	position: relative;
 	width: auto;
+	figure {
+		picture {
+			display: block;	
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
 	h2 {
 		color: #ffffff;
 		font-size: 60px;
@@ -227,7 +247,7 @@ div, section {
 		@include respond-to(max-width, 680px){
 			height: auto;			
 		}
-		h3 {
+		h2 {
 			font-size: 36px;
 			text-align: center;
 		}
@@ -235,18 +255,19 @@ div, section {
 			font-size: 27px;
 			text-align: center;
 		}
-		figure {			
-			margin: 0;
-			padding: 0;
-			img {
-				//display: block;
-				left: 50%;
-				height: auto;
-				position: relative;
-				transform: translateX(-50%);
-				width: 82%;
-				@include respond-to(max-width, 680px){
-					width: 98%;			
+		figure {	
+			picture{
+				display: block;		
+				img {
+					display: block;
+					left: 50%;
+					height: auto;
+					position: relative;
+					transform: translateX(-50%);
+					width: 82%;
+					@include respond-to(max-width, 680px){
+						width: 98%;			
+					}
 				}
 			}
 		}
@@ -265,9 +286,74 @@ div, section {
 //	Section.cities
 //******************
 .cities {
-
+	background-color: #fbfbfb;
+	height: 725px;
 }
 
+//******************
+//	Section.articles
+//******************
 .articles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	h2 {
+		color: #0d97dc;
+		flex-basis: 100%;
+		font-size: 36px;
+  		font-weight: 500;
+  		margin: 63px 0 20px 0;
+		text-align: center;
+		@include respond-to(max-width, 830px){
+			margin: 40px 0 20px 0;			
+		}		
+	}
+	article {
+		flex-basis: 403px;
+		padding: 20px 0;
+		@include respond-to(max-width, 830px){
+			padding: 0;			
+		}
+		h3 {
+			text-align: center;
+		}
+		p {
+			color: #6e6e6e;
+			font-size: 20px;
+			text-align: center;
+		}
+	}
+	div.btn {
+		flex-basis: 100%;
+		margin: 60px 0;
+		@include respond-to(max-width, 830px){
+			margin: 40px 0;		
+		}
+		button {
+			background-color: #ff7800;
+			border: none;
+			border-radius: 71px;
+			color: #ffffff;
+			font-size: 36px;
+			font-weight: bold;
+			left: 50%;
+			outline: none;
+			padding: 19px 40px 23px 40px;
+			position: relative;
+			text-align: center;
+			transform: translateX(-50%);
+			&:hover {
+				background-color: #0d97dc;
+			}
+			@include respond-to(max-width, 830px){
+				font-size: 24px;	
+			}
 
+		}
+	}
 }
+
+//********************************************
+//	Footer
+//********************************************
+@import 'footer';
