@@ -306,13 +306,16 @@ jQuery(document).ready(function(){
    	//------------------------------------------
 	//	Keyframes Slide Up listener
 	//-------------------------------------------
-	var $slide_up_parent = inWindow('.slide-up-parent');
-	$slide_up_parent.find('.slide-up').addClass('active');
+	var $slideUp = inWindow('.slide-up');
+	var $slideDelta = 400; //Slide height
 
-	// Show text on scroll
+	if ($slideUp) {
+		$slideUp.addClass('active');
+	}
+
 	$(window).scroll(function () {
-		var $slide_up_parent = inWindow('.slide-up-parent');
-		$slide_up_parent.find('.slide-up').addClass('active');
+		var $slideUp = inWindow('.slide-up');
+		$slideUp.addClass('active');
 	});
 
 	// Find elements shown on screen
@@ -325,7 +328,7 @@ jQuery(document).ready(function(){
 		currentEls.each(function(){
 			var el = $(this);
 			var offset = el.offset();
-			if(scrollTop <= offset.top && (offset.top + el.height() - 100) < (scrollTop + windowHeight))
+			if(scrollTop <= offset.top && ( (offset.top - $slideDelta) + el.height()) < (scrollTop + windowHeight))
 				result.push(this);
 		});
 		

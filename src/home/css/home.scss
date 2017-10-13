@@ -139,8 +139,7 @@ ul.links {
 				outline: none;
 				padding: 18px 0 17px 30px;
 				&::placeholder {
-					color: #434343;
-					opacity: 0.35;
+					color: rgba(67, 67, 67, 0.35);
 				}
 				@include respond-to(max-width, 550px){
 					padding: 8px 0 8px 30px;	
@@ -179,23 +178,6 @@ ul.links {
 	}	
 }
 
-.choice {
-	button {
-		background:  url(../img/icons/arrow.z.svg) no-repeat;
-		background-size: contain;
-		border: none;
-		cursor: pointer;
-		height: 9px;
-		outline: none;
-		position: absolute;
-		right: 27px;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 19px;
-	}
-
-}
-
 #search {
 	margin-right: 22px;
 	padding-left: 75px;
@@ -210,18 +192,34 @@ ul.links {
 	}		
 }
 
-#choice {
-	padding-right: 46px; 
+select#choice {
+	-webkit-appearance: none; //remove arrow
+	appearance: none;
+	background: url(../img/icons/arrow.z.svg) no-repeat 90% #ffffff;
+	background-size: 27px 9px;
+	border: solid 1px #c6c6c6;
+	border-radius: 100px;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+	font-family: circular-std-book, sans-serif;
+	font-size: 24px;
+	padding: 18px 46px 17px 30px; 
 	position: relative; 
 	width: 252px;
-	&::-webkit-calendar-picker-indicator {
-	  opacity: 1;
+	&:focus {
+		outline: none;
 	}
-	&::placeholder {
-		&:after {
-			content: "q";
-		}
+	&:required:invalid {
+		color: rgba(67, 67, 67, 0.35);
 	}
+	option {
+		border-bottom: solid 3px black; 
+	 	color: rgba(67, 67, 67, 1);	
+	 	margin-top: 40px; 
+	 	&:hover {
+	 		color: red;//#E7F5FC;
+	 	}	
+	}
+	
 }
 
 //********************
