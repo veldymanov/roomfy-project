@@ -69,7 +69,7 @@ ul.links {
 //********************************************
 //	Header
 //********************************************
-@import 'header';
+@import 'header', 'keyframes';
 
 //********************************************
 //	Main
@@ -359,14 +359,14 @@ ul.links {
 }
 
 .prev {
-	background:  url(../img/icons/roomfy-slider.png) no-repeat;
+	background:  url(../img/icons/roomfy-slider.z.png) no-repeat;
 	background-size: contain;
 	right: -40px;
 	transform: rotate(180deg);	
 }
 
 .next{
-	background:  url(../img/icons/roomfy-slider.png) no-repeat;
+	background:  url(../img/icons/roomfy-slider.z.png) no-repeat;
 	background-size: contain;
 	left: -40px;
 }
@@ -387,6 +387,7 @@ ul.links {
 	overflow: hidden;
 	margin: 0;
 	position: relative;
+	transition: box-shadow .5s;
 	width: 366px;
 	&:hover {
 		box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.25);
@@ -415,7 +416,7 @@ ul.links {
 				bottom: 20px;
 				position: absolute;
 				&::after {
-					background: url(../img/icons/opened-door-icon.svg) no-repeat; 
+					background: url(../img/icons/opened-door-icon.z.svg) no-repeat; 
 					background-size: contain;	
 					content: " ";
 					bottom: -10px;  

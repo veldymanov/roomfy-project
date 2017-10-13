@@ -80,6 +80,22 @@ ul.links {
     .nav-item {
       width: auto; } }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(-400px); } }
+
+.slide-up-parent {
+  overflow: hidden; }
+
+.slide-up {
+  position: relative;
+  top: 400px; }
+
+.slide-up.active {
+  animation: slideUp .8s 0s ease forwards; }
+
 .m-head {
   background-color: #ff7800; }
   .m-head p {
@@ -304,13 +320,13 @@ ul.links {
     opacity: 1; }
 
 .prev {
-  background: url(../img/icons/roomfy-slider.png) no-repeat;
+  background: url(../img/icons/roomfy-slider.z.png) no-repeat;
   background-size: contain;
   right: -40px;
   transform: rotate(180deg); }
 
 .next {
-  background: url(../img/icons/roomfy-slider.png) no-repeat;
+  background: url(../img/icons/roomfy-slider.z.png) no-repeat;
   background-size: contain;
   left: -40px; }
 
@@ -326,6 +342,7 @@ ul.links {
   overflow: hidden;
   margin: 0;
   position: relative;
+  transition: box-shadow .5s;
   width: 366px; }
   .touch-list-item:hover {
     box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.25); }
@@ -347,7 +364,7 @@ ul.links {
       bottom: 20px;
       position: absolute; }
       .touch-list-item figure.main-img figcaption div::after {
-        background: url(../img/icons/opened-door-icon.svg) no-repeat;
+        background: url(../img/icons/opened-door-icon.z.svg) no-repeat;
         background-size: contain;
         content: " ";
         bottom: -10px;

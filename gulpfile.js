@@ -147,7 +147,7 @@ gulp.task('html:minify', ['build:remove'], function() {
 gulp.task('css:minify', ['html:minify'], () =>
 gulp.src(['docs/**/*.css'])
     .pipe(plumber())
-    .pipe(cleanCSS())
+    .pipe(cleanCSS({rebase: false}))
     .pipe(gulp.dest('docs/'))
 );
 

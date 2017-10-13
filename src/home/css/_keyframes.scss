@@ -1,0 +1,16 @@
+@keyframes slideUp {
+	0% { transform: translateY(0px);	}
+	100% { transform: translateY(-400px); }
+}
+
+
+.slide-up-parent {
+	overflow: hidden;
+}
+.slide-up {
+	position: relative;
+	top: 400px;
+}
+.slide-up.active{
+	animation: slideUp .8s 0s ease forwards;
+}

@@ -297,8 +297,39 @@ var touchslider = {
 
 
 jQuery(document).ready(function(){
-   //------------------------------------------
+   	//------------------------------------------
 	//	Initialize touchslider
 	//-------------------------------------------
 	touchslider.createSlidePanel('.js-touch-list', 366, 30);
+
+
+   	//------------------------------------------
+	//	Keyframes Slide Up listener
+	//-------------------------------------------
+	var $slide_up_parent = inWindow('.slide-up-parent');
+	$slide_up_parent.find('.slide-up').addClass('active');
+
+	// Show text on scroll
+	$(window).scroll(function () {
+		var $slide_up_parent = inWindow('.slide-up-parent');
+		$slide_up_parent.find('.slide-up').addClass('active');
+	});
+
+	// Find elements shown on screen
+	function inWindow(s){
+		var scrollTop = $(window).scrollTop(),
+			windowHeight = $(window).height(),
+			currentEls = $(s),
+			result = [];
+		
+		currentEls.each(function(){
+			var el = $(this);
+			var offset = el.offset();
+			if(scrollTop <= offset.top && (offset.top + el.height() - 100) < (scrollTop + windowHeight))
+				result.push(this);
+		});
+		
+	  	return $(result);
+	}
+
 });
