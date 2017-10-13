@@ -44,7 +44,7 @@ html, body {
 	font-family: circular-std-book, sans-serif;
 	font-size: 18px;
 	margin: 0 auto;
-	min-width: 525px;
+	min-width: 385px;
 	padding: 0;
 }
 
@@ -153,7 +153,10 @@ ul.links {
 		}
 		@include respond-to(max-width, 700px){
 			top: 150px;		
-		}		
+		}	
+		@include respond-to(max-width, 480px){
+			top: 100px;		
+		}	
 	}
 }
 
@@ -210,6 +213,9 @@ select#choice {
 	}
 	&:required:invalid {
 		color: rgba(67, 67, 67, 0.35);
+	}
+	@include respond-to(max-width, 550px){
+		padding: 8px 0 8px 30px;	
 	}
 	option {
 		border-bottom: solid 3px black; 
@@ -282,6 +288,9 @@ select#choice {
 .cities {
 	background-color: #fbfbfb;
 	padding: 0 61px 96px 61px;
+	@include respond-to(max-width, 540px){
+		padding: 0 0px 96px 0px;
+	}
 	header {
 		display: flex;
 		flex-wrap: wrap;
@@ -297,11 +306,14 @@ select#choice {
 			@include respond-to(max-width, 1055px){
 				padding: 0;
 			}
+			@include respond-to(max-width, 480px){
+				text-align: center;
+			}			
 		}
 		nav {
 			.nav-item {	
 				height: 47px;
-				margin-left: 19px;
+				margin-right: 19px;
 				width: auto;
 				a {
 					border-radius: 100px;
@@ -319,7 +331,7 @@ select#choice {
 
 				}
 				@include respond-to(max-width, 480px){
-					width: auto;	
+					margin-right: 2px;	
 				}	
 			}
 		}
@@ -354,6 +366,9 @@ select#choice {
 	&.is-active {
 		opacity: 1;
 	}
+	@include respond-to(max-width, 525px){
+		display: none;	
+	}	
 }
 
 .prev {

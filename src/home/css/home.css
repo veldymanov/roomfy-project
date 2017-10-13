@@ -22,7 +22,7 @@ html, body {
   font-family: circular-std-book, sans-serif;
   font-size: 18px;
   margin: 0 auto;
-  min-width: 525px;
+  min-width: 385px;
   padding: 0; }
 
 div, section, figure {
@@ -160,6 +160,9 @@ ul.links {
     @media (max-width: 700px) {
       .form > div {
         top: 150px; } }
+    @media (max-width: 480px) {
+      .form > div {
+        top: 100px; } }
 
 .search::before {
   background: url(../img/icons/search-icon.z.svg) no-repeat;
@@ -211,6 +214,9 @@ select#choice {
     outline: none; }
   select#choice:required:invalid {
     color: rgba(67, 67, 67, 0.35); }
+  @media (max-width: 550px) {
+    select#choice {
+      padding: 8px 0 8px 30px; } }
   select#choice option {
     border-bottom: solid 3px black;
     color: #434343;
@@ -262,6 +268,9 @@ select#choice {
 .cities {
   background-color: #fbfbfb;
   padding: 0 61px 96px 61px; }
+  @media (max-width: 540px) {
+    .cities {
+      padding: 0 0px 96px 0px; } }
   .cities header {
     display: flex;
     flex-wrap: wrap;
@@ -277,9 +286,12 @@ select#choice {
       @media (max-width: 1055px) {
         .cities header h2 {
           padding: 0; } }
+      @media (max-width: 480px) {
+        .cities header h2 {
+          text-align: center; } }
     .cities header nav .nav-item {
       height: 47px;
-      margin-left: 19px;
+      margin-right: 19px;
       width: auto; }
       .cities header nav .nav-item a {
         border-radius: 100px;
@@ -295,7 +307,7 @@ select#choice {
             padding: 13px 10px; } }
       @media (max-width: 480px) {
         .cities header nav .nav-item {
-          width: auto; } }
+          margin-right: 2px; } }
 
 .touch-panel {
   position: relative; }
@@ -316,6 +328,9 @@ select#choice {
   width: 25px; }
   .prev.is-active, .next.is-active {
     opacity: 1; }
+  @media (max-width: 525px) {
+    .prev, .next {
+      display: none; } }
 
 .prev {
   background: url(../img/icons/roomfy-slider.z.png) no-repeat;

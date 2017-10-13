@@ -27,7 +27,7 @@ var touchslider = {
 				'position': 'relative'
 			});
 				
-			//<li class='offer-item js-offer-item'>
+			//<li class='touch-list-item js-touch-list-item'>
 			$(this).children('.js-touch-list-item').each(function() {
 				$(this).css({
 					'height': '95%',
@@ -300,7 +300,7 @@ jQuery(document).ready(function(){
    	//------------------------------------------
 	//	Initialize touchslider
 	//-------------------------------------------
-	touchslider.createSlidePanel('.js-touch-list', 366, 30);
+	touchslider.createSlidePanel('.js-touch-list', 366, 16);
 
 
    	//------------------------------------------
