@@ -14,45 +14,18 @@ var touchslider = {
 		//$(gridid)
 		document.querySelectorAll(gridid).forEach( function(el) {
 			//<div class="js-touch-box">
-			/*	
-			$(this.parent().css({ 
-				margin: '0 auto',
-				overflow: 'hidden'
-			});
-			*/
 			el.parentElement.style.cssText = "margin: 0 auto; overflow: hidden;" 
 				
 			//<ul class='js-touch-list'> === gridid
-			/*
-			$(this).css({	
-				'left': '0px',		
-				'list-style-type': "none",
-				'margin': '0',
-				'padding': '0',
-				'position': 'relative'
-			});
-			*/
 			el.style.cssText = "left: 0px; list-style-type: none; margin: 0; padding: 0; position: relative;"; 
 				
 			//<li class='js-touch-list-item'>
-			/*
-			$(this).children('.js-touch-list-item').each(function() {
-				$(this).css({
-					'height': '95%',
-					'left': x + 'px',
-					'position': 'absolute',
-				//	'top': padding + 'px',
-					'width': cellWidth + 'px'					
-				});
-
-				x += cellWidth + padding;
-			});
-			*/
 			var qwert = el.querySelectorAll('.js-touch-list-item');
 			el.querySelectorAll('.js-touch-list-item').forEach( function(el) {
 				el.style.cssText = `height: 95%; left: ${x}px; position: absolute; width: ${cellWidth}px;`;
 				x += cellWidth + padding;
-			})
+			});
+
 			/*
 			   We need to save this information so we can use it later when
 			   we're sliding the grid.
@@ -74,12 +47,14 @@ var touchslider = {
 				touchslider.touchAreaSize(gridid);
 					
 				//Resizing Touch Area Size
-				$(window).resize(function(){ touchslider.touchAreaSize(gridid) });
+				window.addEventListener('resize', function() {
+    				touchslider.touchAreaSize(gridid);
+				})
 					
 				//Sliding by click
 				$('.js-prev').on('click', function(){ touchslider.prevClick(gridid) });
 				$('.js-next').on('click', function(){ touchslider.nextClick(gridid) });
-				//Activate arrows
+				//Activate arrows/managing buttons
 				touchslider.doSlide($(gridid), 0, '0s');
 			}
 		});			
@@ -352,5 +327,4 @@ jQuery(document).ready(function(){
 
 	//	Keyframes, Lazy Load Slide Up listener
 	lazyLoad.slideUpSetUp('.js-slide-up', 400);
-
 });

@@ -2,6 +2,7 @@
 //	Touch Panel (don't change)
 //**********************************************************************************************
 div.js-touch-panel {
+	-webkit-tap-highlight-color: transparent;
 	position: relative;
 	div.js-touch-box {
 		/*JS Set Up
@@ -21,7 +22,6 @@ div.js-touch-panel {
 			'padding': '0',
 			'position': 'relative'
 			*/
-
 			height: 100%;
 			li.js-touch-list-item {
 				/* JS Set Up
@@ -30,6 +30,10 @@ div.js-touch-panel {
 				'position': 'absolute',
 				'width': cellWidth + 'px'	
 				*/
+				img {
+					//Stop img blue-overlay
+					user-select: none;
+				}
 			}
 		}
 
@@ -69,3 +73,5 @@ svg.js-prev {
 	right: -40px;
 	transform: rotate(180deg);	
 }
+
+

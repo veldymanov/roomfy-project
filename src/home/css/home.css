@@ -57,6 +57,7 @@
   animation: slideUp .8s 0s ease forwards; }
 
 div.js-touch-panel {
+  -webkit-tap-highlight-color: transparent;
   position: relative; }
   div.js-touch-panel div.js-touch-box {
     /*JS Set Up
@@ -82,6 +83,8 @@ div.js-touch-panel {
 				'position': 'absolute',
 				'width': cellWidth + 'px'	
 				*/ }
+        div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
+          user-select: none; }
 
 svg.js-next, svg.js-prev {
   height: 40px;
