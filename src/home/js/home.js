@@ -1,7 +1,7 @@
 //-------------------------------------------------------------------------------------------------------
 //	Touchslider
 //-------------------------------------------------------------------------------------------------------
-touchslider = {
+var touchslider = {
 	log: function(msg) {
 //		var p = document.getElementById('log');
 //		p.innerHTML = p.innerHTML + "<br>" + msg;
@@ -227,7 +227,7 @@ touchslider = {
 		var hiddenWidth = ( this.width - parseInt(this.padding/2, 10) ) - parseInt(elem.parent().width(), 10);
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
-			if (Math.abs(x) <  hiddenWidth) {
+			if ( Math.abs(x) <  hiddenWidth ) {
 				$('.js-prev').addClass('is-active');
 			}
 		} else if ( Math.abs(x) >=  hiddenWidth ){
@@ -301,7 +301,7 @@ touchslider = {
 //----------------------------------------------------------------------------------------------------------
 // Lazy Load SlideUp
 //----------------------------------------------------------------------------------------------------------
-lazyLoad = {
+var lazyLoad = {
 	slideUpSetUp: function (/*JS, string*/ elem, /*Slide height, int*/ slideDelta) {
 		var elem = elem; 
 		var slideDelta = slideDelta; 
