@@ -109,6 +109,9 @@ var touchslider = {
 				$(this).css({ 
 					width: touchAreaWidth 
 				});
+
+				//Used below
+				touchslider.hiddenWidth = ( touchslider.width - (touchslider.padding / 2) ) - touchAreaWidth;				
 			});	
 	},
 		
@@ -135,9 +138,6 @@ var touchslider = {
 	 */
 	touchStart: function(/*JQuery*/ elem, /*event*/ e) {
 		 elem.css({
-			'-ms-transition': 'left 0s',
-			'-moz-transition': 'left 0s',
-			'-o-transition': 'left 0s',
 			'transition': 'left 0s'
 		 });
 			 
@@ -196,9 +196,9 @@ var touchslider = {
 			this.doSlide(elem, 0, '1s');
 		 
 			this.startX = null;
-		} else if ( Math.abs(this.getLeft(elem))  > ( this.width - elem.parent().width() )) {
+		} else if ( Math.abs(this.getLeft(elem))  > this.hiddenWidth ) {
 			// This means they dragged to the left past the last item
-			this.doSlide(elem, '-' + (this.width - elem.parent().width()), '1s');
+			this.doSlide(elem, -this.hiddenWidth, '1s');
 			 
 			this.startX = null;
 		} else {
@@ -224,13 +224,12 @@ var touchslider = {
 			'transition': 'left ' + duration
 		 });
 			 
-		var hiddenWidth = ( this.width - parseInt(this.padding/2, 10) ) - parseInt(elem.parent().width(), 10);
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
 			if ( Math.abs(x) <  hiddenWidth ) {
 				$('.js-prev').addClass('is-active');
 			}
-		} else if ( Math.abs(x) >=  hiddenWidth ){
+		} else if ( Math.abs(x) >=  this.hiddenWidth ){
 			$('.js-prev').removeClass('is-active');
 			$('.js-next').addClass('is-active');
 		} else {
