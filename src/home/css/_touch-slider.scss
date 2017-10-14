@@ -31,6 +31,9 @@ div.js-touch-panel {
 			//	'top': padding + 'px',
 				'width': cellWidth + 'px'	
 				*/
+				img {
+					user-select: none;
+				}
 			}
 		}
 
