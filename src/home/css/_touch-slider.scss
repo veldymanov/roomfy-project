@@ -5,31 +5,30 @@ div.js-touch-panel {
 	-webkit-tap-highlight-color: transparent;
 	position: relative;
 	div.js-touch-box {
-		/*JS Set Up
-		margin: '0 auto',
-		overflow: 'hidden'		
-		*/
-
+		//JS Set Up----------
+		//margin: '0 auto',
+		//overflow: 'hidden'		
+		//-------------------
 		svg.js-prev, svg.js-next {
 			cursor: pointer;
 			position: absolute;
 		}
 		ul.js-touch-list { //gridid
-			/* JS Set Up
-			'left': '0px',		
-			'list-style-type': "none",
-			'margin': '0',
-			'padding': '0',
-			'position': 'relative'
-			*/
+			//JS Set Up-----------------
+			//'left': '0px',		
+			//'list-style-type': "none",
+			//'margin': '0',
+			//'padding': '0',
+			//'position': 'relative'
+			//--------------------------
 			height: 100%;
 			li.js-touch-list-item {
-				/* JS Set Up
-				'height': '95%',
-				'left': x + 'px',
-				'position': 'absolute',
-				'width': cellWidth + 'px'	
-				*/
+				//JS Set Up----------------
+				//'height': '95%',
+				//'left': x + 'px',
+				//'position': 'absolute',
+				//'width': cellWidth + 'px'	
+				//--------------------------
 				img {
 					//Stop img blue-overlay
 					user-select: none;

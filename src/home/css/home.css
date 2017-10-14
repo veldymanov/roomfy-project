@@ -59,32 +59,13 @@
 div.js-touch-panel {
   -webkit-tap-highlight-color: transparent;
   position: relative; }
-  div.js-touch-panel div.js-touch-box {
-    /*JS Set Up
-		margin: '0 auto',
-		overflow: 'hidden'		
-		*/ }
-    div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
-      cursor: pointer;
-      position: absolute; }
-    div.js-touch-panel div.js-touch-box ul.js-touch-list {
-      /* JS Set Up
-			'left': '0px',		
-			'list-style-type': "none",
-			'margin': '0',
-			'padding': '0',
-			'position': 'relative'
-			*/
-      height: 100%; }
-      div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item {
-        /* JS Set Up
-				'height': '95%',
-				'left': x + 'px',
-				'position': 'absolute',
-				'width': cellWidth + 'px'	
-				*/ }
-        div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
-          user-select: none; }
+  div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
+    cursor: pointer;
+    position: absolute; }
+  div.js-touch-panel div.js-touch-box ul.js-touch-list {
+    height: 100%; }
+    div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
+      user-select: none; }
 
 svg.js-next, svg.js-prev {
   height: 40px;

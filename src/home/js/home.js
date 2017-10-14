@@ -31,8 +31,8 @@ var touchslider = {
 			   we're sliding the grid.
 			 */
 			touchslider.width = x;
+			touchslider.padding = padding;
 			touchslider.colWidth = cellWidth + padding;
-			touchslider.hiddenWidth = ( x - Math.round(padding/2) ) - el.parentElement.offsetWidth;
 				
 			try {
 				//Touch events check
@@ -96,6 +96,9 @@ var touchslider = {
 				$(this).css({ 
 					width: touchAreaWidth 
 				});
+
+				//Used below
+				touchslider.hiddenWidth = ( touchslider.width - (touchslider.padding / 2) ) - touchAreaWidth;
 			});	
 	},
 		
@@ -122,9 +125,6 @@ var touchslider = {
 	 */
 	touchStart: function(/*JQuery*/ elem, /*event*/ e) {
 		 elem.css({
-			'-ms-transition': 'left 0s',
-			'-moz-transition': 'left 0s',
-			'-o-transition': 'left 0s',
 			'transition': 'left 0s'
 		 });
 			 
@@ -181,7 +181,7 @@ var touchslider = {
 		if (this.getLeft(elem) > 0) {
 			// This means they dragged to the right past the first item
 			this.doSlide(elem, 0, '1s');
-		 
+
 			this.startX = null;
 		} else if ( Math.abs(this.getLeft(elem))  > this.hiddenWidth ) {
 			// This means they dragged to the left past the last item
