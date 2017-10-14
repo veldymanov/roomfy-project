@@ -226,7 +226,7 @@ var touchslider = {
 			 
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
-			if ( Math.abs(x) <  hiddenWidth ) {
+			if ( Math.abs(x) <  this.hiddenWidth ) {
 				$('.js-prev').addClass('is-active');
 			}
 		} else if ( Math.abs(x) >=  this.hiddenWidth ){
