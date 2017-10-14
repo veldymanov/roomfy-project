@@ -64,6 +64,7 @@ div.js-touch-panel {
 		overflow: 'hidden'		
 		*/ }
     div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
+      cursor: pointer;
       position: absolute; }
     div.js-touch-panel div.js-touch-box ul.js-touch-list {
       /* JS Set Up
@@ -84,7 +85,6 @@ div.js-touch-panel {
 				*/ }
 
 svg.js-next, svg.js-prev {
-  cursor: pointer;
   height: 40px;
   top: 30%;
   width: 25px; }

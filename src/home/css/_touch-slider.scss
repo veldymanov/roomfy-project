@@ -43,10 +43,10 @@ div.js-touch-panel {
 // 		<svg class="js-next" viewBox="0 0 250 400"><path d="M 225 25 L 25 200 L 225 375"/></svg>
 //      <svg class="js-prev" viewBox="0 0 250 400"><path d="M 225 25 L 25 200 L 225 375"/></svg>
 //***********************************************************************************************
-svg.js-next, svg.js-prev {
+svg.js-next, svg.js-prev { 
 	height: 40px;
 	top: 30%;
-	width: 25px;  
+	width: 25px;   
 	path {
 		fill: transparent;
 		stroke: rgba(67, 67, 67, 0.2);
@@ -56,8 +56,8 @@ svg.js-next, svg.js-prev {
 		path {
 			stroke: rgba(67, 67, 67, .7);
 		}
-	} 
-	@include respond-to(max-width, 525px){
+	}	
+	@include respond-to(max-width, 525px){ 
 		display: none;	
 	}		 
 } 
