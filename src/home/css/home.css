@@ -83,6 +83,8 @@ div.js-touch-panel {
 			//	'top': padding + 'px',
 				'width': cellWidth + 'px'	
 				*/ }
+        div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
+          user-select: none; }
 
 svg.js-next, svg.js-prev {
   height: 40px;
