@@ -3,10 +3,10 @@
 	100% { transform: translateY(-400px); }
 }
 
-.slide-up {
+.js-slide-up {
 	position: relative;
 	top: 400px;
 }
-.slide-up.active{
+.js-slide-up.active{
 	animation: slideUp .8s 0s ease forwards;
 }

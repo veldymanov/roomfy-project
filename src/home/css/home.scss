@@ -13,6 +13,11 @@ $btnBgrColor: #EBEBEB;
 	}
 }
 
+//********************************************
+//	Imports
+//********************************************
+@import 'header', 'keyframes', 'touch-slider', 'footer';
+
 
 //********************************************
 //	Fonts
@@ -67,9 +72,9 @@ ul.links {
 }
 
 //********************************************
-//	Header
+// Header: @import 'header';
 //********************************************
-@import 'header', 'keyframes';
+
 
 //********************************************
 //	Main
@@ -228,9 +233,9 @@ select#choice {
 	
 }
 
-//********************
+//**********************
 //	Section.screenshots
-//********************
+//**********************
 .screenshots {
 	color: #ffffff;
 	display: flex;
@@ -338,68 +343,25 @@ select#choice {
 	}
 }
 
-//*************************
+//------------------
 //	Touch Panel
-//**************************
-.touch-panel {
-	position: relative;
-	.touch-box {
+//------------------
+div.touch-panel {
+	div.touch-box {
 		height: 442px;
-		margin: 0 ;
 	}
-}
+	ul.touch-list {
+		li.touch-list-item {
 
-//---------------------------
-//	Touch Buttons: Prev, Next
-//---------------------------
-.prev, .next{
-	background: transparent;
-	color: #434343;
-	cursor: pointer;
-	font-size: 50px;
-	height: 40px;
-	opacity: 0.2;
-	position: absolute;
-	text-decoration: none;
-	top: 30%;
-	width: 25px;
-	&.is-active {
-		opacity: 1;
-	}
-	@include respond-to(max-width, 525px){
-		display: none;	
+		}
 	}	
 }
 
-.prev {
-	background:  url(../img/icons/roomfy-slider.z.png) no-repeat;
-	background-size: contain;
-	right: -40px;
-	transform: rotate(180deg);	
-}
-
-.next{
-	background:  url(../img/icons/roomfy-slider.z.png) no-repeat;
-	background-size: contain;
-	left: -40px;
-}
-
-//---------------------------
-//	Touch List
-//---------------------------
-.touch-list {
-	height: 100%;
-	list-style-type: none;
-	padding: 0px;
-}
-
-.touch-list-item {
+li.touch-list-item {
 	border-radius: 30px;
 	box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
 	height: 442px;
 	overflow: hidden;
-	margin: 0;
-	position: relative;
 	transition: box-shadow .5s;
 	width: 366px;
 	&:hover {
@@ -528,6 +490,5 @@ select#choice {
 }
 
 //********************************************
-//	Footer
+//	Footer: @import 'footer';
 //********************************************
-@import 'footer';

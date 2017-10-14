@@ -1,43 +1,6 @@
 /******************************************
 *		Roomfy Main! Stylesheet		
 *******************************************/
-@font-face {
-  font-family: circular-std-book;
-  src: url(../../common_files/fonts/CircularStd-Book.otf); }
-
-@font-face {
-  font-family: circular-std-book;
-  src: url(../../common_files/fonts/CircularStd-Bold.otf);
-  font-weight: bold; }
-
-@font-face {
-  font-family: circular-std-book;
-  src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
-  font-style: italic; }
-
-* {
-  box-sizing: border-box; }
-
-html, body {
-  font-family: circular-std-book, sans-serif;
-  font-size: 18px;
-  margin: 0 auto;
-  min-width: 385px;
-  padding: 0; }
-
-div, section, figure {
-  margin: 0;
-  padding: 0; }
-
-ul.links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-  ul.links li a {
-    display: block;
-    height: 100%;
-    text-decoration: none; }
-
 .header {
   background-color: #1b1b1b;
   box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.28);
@@ -86,12 +49,154 @@ ul.links {
   100% {
     transform: translateY(-400px); } }
 
-.slide-up {
+.js-slide-up {
   position: relative;
   top: 400px; }
 
-.slide-up.active {
+.js-slide-up.active {
   animation: slideUp .8s 0s ease forwards; }
+
+div.js-touch-panel {
+  position: relative; }
+  div.js-touch-panel div.js-touch-box {
+    /*JS Set Up
+		margin: '0 auto',
+		overflow: 'hidden'		
+		*/ }
+    div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
+      position: absolute; }
+    div.js-touch-panel div.js-touch-box ul.js-touch-list {
+      /* JS Set Up
+			'left': '0px',		
+			'list-style-type': "none",
+			'margin': '0',
+			'padding': '0',
+			'position': 'relative'
+			*/
+      height: 100%; }
+      div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item {
+        /* JS Set Up
+				'height': '95%',
+				'left': x + 'px',
+				'position': 'absolute',
+			//	'top': padding + 'px',
+				'width': cellWidth + 'px'	
+				*/ }
+
+svg.js-next, svg.js-prev {
+  cursor: pointer;
+  height: 40px;
+  top: 30%;
+  width: 25px; }
+  svg.js-next path, svg.js-prev path {
+    fill: transparent;
+    stroke: rgba(67, 67, 67, 0.2);
+    stroke-width: 15; }
+  svg.js-next.is-active path, svg.js-prev.is-active path {
+    stroke: rgba(67, 67, 67, 0.7); }
+  @media (max-width: 525px) {
+    svg.js-next, svg.js-prev {
+      display: none; } }
+
+svg.js-next {
+  left: -40px; }
+
+svg.js-prev {
+  right: -40px;
+  transform: rotate(180deg); }
+
+.footer {
+  border-top: 1px solid #dbdde0;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 26px; }
+  @media (max-width: 1000px) {
+    .footer {
+      flex-wrap: wrap; } }
+  .footer div {
+    flex-basis: 272px;
+    padding: 60px 0; }
+    @media (max-width: 1000px) {
+      .footer div {
+        flex-basis: 30%;
+        padding: 10px 0; } }
+    @media (max-width: 620px) {
+      .footer div {
+        flex-basis: 95%; } }
+    .footer div h3 {
+      color: #434343;
+      font-size: 24px;
+      opacity: 0.8; }
+    .footer div p {
+      color: #6e6e6e;
+      font-size: 20px;
+      opacity: 0.6; }
+    .footer div ul li a {
+      color: #6e6e6e;
+      font-size: 20px;
+      opacity: 0.6; }
+      .footer div ul li a:hover {
+        opacity: 1; }
+  .footer div.roomfy {
+    flex-basis: 461px; }
+    .footer div.roomfy h2 {
+      color: #434343;
+      font-size: 36px;
+      opacity: 0.6; }
+    @media (max-width: 1000px) {
+      .footer div.roomfy {
+        flex-basis: 95%; } }
+  .footer div.reach-out ul.socials {
+    display: flex;
+    margin-top: 30px; }
+    .footer div.reach-out ul.socials li {
+      margin-right: 30px; }
+      .footer div.reach-out ul.socials li a {
+        background-color: #d8d8d8;
+        border-radius: 2px;
+        height: 31px;
+        opacity: 0.6;
+        padding-right: 10px;
+        width: 31px; }
+        .footer div.reach-out ul.socials li a:hover {
+          opacity: 1; }
+
+@font-face {
+  font-family: circular-std-book;
+  src: url(../../common_files/fonts/CircularStd-Book.otf); }
+
+@font-face {
+  font-family: circular-std-book;
+  src: url(../../common_files/fonts/CircularStd-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: circular-std-book;
+  src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
+  font-style: italic; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  font-family: circular-std-book, sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  min-width: 385px;
+  padding: 0; }
+
+div, section, figure {
+  margin: 0;
+  padding: 0; }
+
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  ul.links li a {
+    display: block;
+    height: 100%;
+    text-decoration: none; }
 
 .m-head {
   background-color: #ff7800; }
@@ -309,74 +414,36 @@ select#choice {
         .cities header nav .nav-item {
           margin-right: 2px; } }
 
-.touch-panel {
-  position: relative; }
-  .touch-panel .touch-box {
-    height: 442px;
-    margin: 0; }
+div.touch-panel div.touch-box {
+  height: 442px; }
 
-.prev, .next {
-  background: transparent;
-  color: #434343;
-  cursor: pointer;
-  font-size: 50px;
-  height: 40px;
-  opacity: 0.2;
-  position: absolute;
-  text-decoration: none;
-  top: 30%;
-  width: 25px; }
-  .prev.is-active, .next.is-active {
-    opacity: 1; }
-  @media (max-width: 525px) {
-    .prev, .next {
-      display: none; } }
-
-.prev {
-  background: url(../img/icons/roomfy-slider.z.png) no-repeat;
-  background-size: contain;
-  right: -40px;
-  transform: rotate(180deg); }
-
-.next {
-  background: url(../img/icons/roomfy-slider.z.png) no-repeat;
-  background-size: contain;
-  left: -40px; }
-
-.touch-list {
-  height: 100%;
-  list-style-type: none;
-  padding: 0px; }
-
-.touch-list-item {
+li.touch-list-item {
   border-radius: 30px;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
   height: 442px;
   overflow: hidden;
-  margin: 0;
-  position: relative;
   transition: box-shadow .5s;
   width: 366px; }
-  .touch-list-item:hover {
+  li.touch-list-item:hover {
     box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.25); }
-  .touch-list-item figure.main-img picture {
+  li.touch-list-item figure.main-img picture {
     display: block; }
-    .touch-list-item figure.main-img picture img {
+    li.touch-list-item figure.main-img picture img {
       display: block;
       height: 272px;
       width: 366px; }
-  .touch-list-item figure.main-img figcaption {
+  li.touch-list-item figure.main-img figcaption {
     color: #434343;
     padding: 10px 22px 0 27px; }
-    .touch-list-item figure.main-img figcaption h3 {
+    li.touch-list-item figure.main-img figcaption h3 {
       margin: 10px 0; }
-    .touch-list-item figure.main-img figcaption p {
+    li.touch-list-item figure.main-img figcaption p {
       background-color: transparent;
       margin: 0; }
-    .touch-list-item figure.main-img figcaption div {
+    li.touch-list-item figure.main-img figcaption div {
       bottom: 20px;
       position: absolute; }
-      .touch-list-item figure.main-img figcaption div::after {
+      li.touch-list-item figure.main-img figcaption div::after {
         background: url(../img/icons/opened-door-icon.z.svg) no-repeat;
         background-size: contain;
         content: " ";
@@ -386,7 +453,7 @@ select#choice {
         position: absolute;
         right: -275px;
         width: 35px; }
-  .touch-list-item figure.avatar {
+  li.touch-list-item figure.avatar {
     background-color: #d8d8d8;
     border-radius: 50%;
     bottom: 140px;
@@ -395,9 +462,9 @@ select#choice {
     outline: none;
     position: absolute;
     right: 10px; }
-    .touch-list-item figure.avatar picture {
+    li.touch-list-item figure.avatar picture {
       display: block; }
-      .touch-list-item figure.avatar picture img {
+      li.touch-list-item figure.avatar picture img {
         display: block;
         height: 52px;
         width: 52px; }
@@ -452,59 +519,3 @@ select#choice {
       @media (max-width: 830px) {
         .articles div.btn button {
           font-size: 24px; } }
-
-.footer {
-  border-top: 1px solid #dbdde0;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 26px; }
-  @media (max-width: 1000px) {
-    .footer {
-      flex-wrap: wrap; } }
-  .footer div {
-    flex-basis: 272px;
-    padding: 60px 0; }
-    @media (max-width: 1000px) {
-      .footer div {
-        flex-basis: 30%;
-        padding: 10px 0; } }
-    @media (max-width: 620px) {
-      .footer div {
-        flex-basis: 95%; } }
-    .footer div h3 {
-      color: #434343;
-      font-size: 24px;
-      opacity: 0.8; }
-    .footer div p {
-      color: #6e6e6e;
-      font-size: 20px;
-      opacity: 0.6; }
-    .footer div ul li a {
-      color: #6e6e6e;
-      font-size: 20px;
-      opacity: 0.6; }
-      .footer div ul li a:hover {
-        opacity: 1; }
-  .footer div.roomfy {
-    flex-basis: 461px; }
-    .footer div.roomfy h2 {
-      color: #434343;
-      font-size: 36px;
-      opacity: 0.6; }
-    @media (max-width: 1000px) {
-      .footer div.roomfy {
-        flex-basis: 95%; } }
-  .footer div.reach-out ul.socials {
-    display: flex;
-    margin-top: 30px; }
-    .footer div.reach-out ul.socials li {
-      margin-right: 30px; }
-      .footer div.reach-out ul.socials li a {
-        background-color: #d8d8d8;
-        border-radius: 2px;
-        height: 31px;
-        opacity: 0.6;
-        padding-right: 10px;
-        width: 31px; }
-        .footer div.reach-out ul.socials li a:hover {
-          opacity: 1; }

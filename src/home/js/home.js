@@ -1,7 +1,7 @@
-//------------------------------------------
-//	Sales Special Touchslider
-//-------------------------------------------
-var touchslider = {
+//-------------------------------------------------------------------------------------------------------
+//	Touchslider
+//-------------------------------------------------------------------------------------------------------
+touchslider = {
 	log: function(msg) {
 //		var p = document.getElementById('log');
 //		p.innerHTML = p.innerHTML + "<br>" + msg;
@@ -12,13 +12,13 @@ var touchslider = {
 		var x = padding/2;
 				
 		$(gridid).each(function() {
-			//<div class="touch-box">	
+			//<div class="js-touch-box">	
 			$(this).parent().css({ 
 				margin: '0 auto',
 				overflow: 'hidden'
 			});
 				
-			//<ul class='touch-list js-touch-list'> === gridid
+			//<ul class='js-touch-list'> === gridid
 			$(this).css({	
 				'left': '0px',		
 				'list-style-type': "none",
@@ -27,7 +27,7 @@ var touchslider = {
 				'position': 'relative'
 			});
 				
-			//<li class='touch-list-item js-touch-list-item'>
+			//<li class='js-touch-list-item'>
 			$(this).children('.js-touch-list-item').each(function() {
 				$(this).css({
 					'height': '95%',
@@ -67,6 +67,8 @@ var touchslider = {
 				//Sliding by click
 				$('.js-prev').on('click', function(){ touchslider.prevClick(gridid) });
 				$('.js-next').on('click', function(){ touchslider.nextClick(gridid) });
+				//Activate arrows
+				touchslider.doSlide($(gridid), 0, '0s');
 			}
 		});			
 	},
@@ -219,17 +221,16 @@ var touchslider = {
 	doSlide: function(/*jQuery*/ elem, /*int*/ x, /*string*/ duration) { 
 		elem.css({
 			left: x + 'px',
-			'-ms-transition': 'left ' + duration,
-			'-moz-transition': 'left ' + duration,
-			'-o-transition': 'left ' + duration,
-			'-webkit-transition': 'left ' + duration,
 			'transition': 'left ' + duration
 		 });
 			 
+		var hiddenWidth = ( this.width - parseInt(this.padding/2, 10) ) - parseInt(elem.parent().width(), 10);
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
-			$('.js-prev').addClass('is-active');
-		} else if (Math.abs(x) === this.width - parseInt(elem.parent().width(), 10) - parseInt(this.padding/2, 10)){
+			if (Math.abs(x) <  hiddenWidth) {
+				$('.js-prev').addClass('is-active');
+			}
+		} else if ( Math.abs(x) >=  hiddenWidth ){
 			$('.js-prev').removeClass('is-active');
 			$('.js-next').addClass('is-active');
 		} else {
@@ -294,45 +295,51 @@ var touchslider = {
 		this.startX = null;
 	}
 };	
+//----------------------------------------------------------------------------------------------------------
 
 
-jQuery(document).ready(function(){
-   	//------------------------------------------
-	//	Initialize touchslider
-	//-------------------------------------------
-	touchslider.createSlidePanel('.js-touch-list', 366, 16);
+//----------------------------------------------------------------------------------------------------------
+// Lazy Load SlideUp
+//----------------------------------------------------------------------------------------------------------
+lazyLoad = {
+	slideUpSetUp: function (/*JS, string*/ elem, /*Slide height, int*/ slideDelta) {
+		var elem = elem; 
+		var slideDelta = slideDelta; 
+		var slideUp = lazyLoad.inWindow(elem, slideDelta);	
 
+		if (slideUp) {
+			slideUp.addClass('active');
+		}
 
-   	//------------------------------------------
-	//	Keyframes Slide Up listener
-	//-------------------------------------------
-	var $slideUp = inWindow('.slide-up');
-	var $slideDelta = 400; //Slide height
+		$(window).scroll(function () {
+			var slideUp = lazyLoad.inWindow(elem, slideDelta);
+			slideUp.addClass('active');
+		});		
+	},
 
-	if ($slideUp) {
-		$slideUp.addClass('active');
-	}
-
-	$(window).scroll(function () {
-		var $slideUp = inWindow('.slide-up');
-		$slideUp.addClass('active');
-	});
-
-	// Find elements shown on screen
-	function inWindow(s){
+	inWindow: function (elem, slideDelta) {
 		var scrollTop = $(window).scrollTop(),
 			windowHeight = $(window).height(),
-			currentEls = $(s),
+			currentEls = $(elem),
 			result = [];
 		
 		currentEls.each(function(){
 			var el = $(this);
 			var offset = el.offset();
-			if(scrollTop <= offset.top && ( (offset.top - $slideDelta) + el.height()) < (scrollTop + windowHeight))
+			if(scrollTop <= offset.top && ( (offset.top - slideDelta) + el.height()) < (scrollTop + windowHeight))
 				result.push(this);
 		});
 		
 	  	return $(result);
 	}
+}
+
+
+jQuery(document).ready(function(){
+	//	Initialize touchslider
+	touchslider.createSlidePanel('.js-touch-list', 366, 16);
+
+	//	Keyframes, Lazy Load Slide Up listener
+	lazyLoad.slideUpSetUp('.js-slide-up', 400);
 
 });

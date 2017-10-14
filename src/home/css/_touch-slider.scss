@@ -1,0 +1,72 @@
+//**********************************************************************************************
+//	Touch Panel (don't change)
+//**********************************************************************************************
+div.js-touch-panel {
+	position: relative;
+	div.js-touch-box {
+		/*JS Set Up
+		margin: '0 auto',
+		overflow: 'hidden'		
+		*/
+
+		svg.js-prev, svg.js-next {
+			cursor: pointer;
+			position: absolute;
+		}
+		ul.js-touch-list { //gridid
+			/* JS Set Up
+			'left': '0px',		
+			'list-style-type': "none",
+			'margin': '0',
+			'padding': '0',
+			'position': 'relative'
+			*/
+
+			height: 100%;
+			li.js-touch-list-item {
+				/* JS Set Up
+				'height': '95%',
+				'left': x + 'px',
+				'position': 'absolute',
+			//	'top': padding + 'px',
+				'width': cellWidth + 'px'	
+				*/
+			}
+		}
+
+	}
+}
+
+
+//**********************************************************************************************
+//	Touch Buttons Prev & Next:
+// 		<svg class="js-next" viewBox="0 0 250 400"><path d="M 225 25 L 25 200 L 225 375"/></svg>
+//      <svg class="js-prev" viewBox="0 0 250 400"><path d="M 225 25 L 25 200 L 225 375"/></svg>
+//***********************************************************************************************
+svg.js-next, svg.js-prev {
+	height: 40px;
+	top: 30%;
+	width: 25px;  
+	path {
+		fill: transparent;
+		stroke: rgba(67, 67, 67, 0.2);
+        stroke-width: 15;    		
+	}
+	&.is-active {
+		path {
+			stroke: rgba(67, 67, 67, .7);
+		}
+	} 
+	@include respond-to(max-width, 525px){
+		display: none;	
+	}		 
+} 
+
+svg.js-next {
+	left: -40px;
+}
+
+svg.js-prev {
+	right: -40px;
+	transform: rotate(180deg);	
+}
