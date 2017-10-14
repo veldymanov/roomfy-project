@@ -11,14 +11,19 @@ var touchslider = {
 		var padding = padding || 0;
 		var x = padding/2;
 				
-		$(gridid).each(function() {
-			//<div class="js-touch-box">	
-			$(this).parent().css({ 
+		//$(gridid)
+		document.querySelectorAll(gridid).forEach( function(el) {
+			//<div class="js-touch-box">
+			/*	
+			$(this.parent().css({ 
 				margin: '0 auto',
 				overflow: 'hidden'
 			});
+			*/
+			el.parentElement.style.cssText = "margin: 0 auto; overflow: hidden;" 
 				
 			//<ul class='js-touch-list'> === gridid
+			/*
 			$(this).css({	
 				'left': '0px',		
 				'list-style-type': "none",
@@ -26,8 +31,11 @@ var touchslider = {
 				'padding': '0',
 				'position': 'relative'
 			});
+			*/
+			el.style.cssText = "left: 0px; list-style-type: none; margin: 0; padding: 0; position: relative;"; 
 				
 			//<li class='js-touch-list-item'>
+			/*
 			$(this).children('.js-touch-list-item').each(function() {
 				$(this).css({
 					'height': '95%',
@@ -39,15 +47,19 @@ var touchslider = {
 
 				x += cellWidth + padding;
 			});
+			*/
+			var qwert = el.querySelectorAll('.js-touch-list-item');
+			el.querySelectorAll('.js-touch-list-item').forEach( function(el) {
+				el.style.cssText = `height: 95%; left: ${x}px; position: absolute; width: ${cellWidth}px;`;
+				x += cellWidth + padding;
+			})
 			/*
-			   Many of the mobile browsers resize the screen and therefore
-			   don't give accurate information about the size of the window.
 			   We need to save this information so we can use it later when
 			   we're sliding the grid.
 			 */
 			touchslider.width = x;
 			touchslider.colWidth = cellWidth + padding;
-			touchslider.padding = padding;
+			touchslider.hiddenWidth = ( x - Math.round(padding/2) ) - el.parentElement.offsetWidth;
 				
 			try {
 				//Touch events check
@@ -196,9 +208,9 @@ var touchslider = {
 			this.doSlide(elem, 0, '1s');
 		 
 			this.startX = null;
-		} else if ( Math.abs(this.getLeft(elem))  > ( this.width - elem.parent().width() )) {
+		} else if ( Math.abs(this.getLeft(elem))  > this.hiddenWidth ) {
 			// This means they dragged to the left past the last item
-			this.doSlide(elem, '-' + (this.width - elem.parent().width()), '1s');
+			this.doSlide(elem, -this.hiddenWidth, '1s');
 			 
 			this.startX = null;
 		} else {
@@ -224,13 +236,12 @@ var touchslider = {
 			'transition': 'left ' + duration
 		 });
 			 
-		var hiddenWidth = ( this.width - parseInt(this.padding/2, 10) ) - parseInt(elem.parent().width(), 10);
 		if (x === 0) {
 			$('.js-next').removeClass('is-active');
-			if ( Math.abs(x) <  hiddenWidth ) {
+			if ( Math.abs(x) <  this.hiddenWidth ) {
 				$('.js-prev').addClass('is-active');
 			}
-		} else if ( Math.abs(x) >=  hiddenWidth ){
+		} else if ( Math.abs(x) >=  this.hiddenWidth ){
 			$('.js-prev').removeClass('is-active');
 			$('.js-next').addClass('is-active');
 		} else {
