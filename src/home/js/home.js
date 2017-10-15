@@ -52,8 +52,12 @@ var touchslider = {
 			})
 				
 			//Sliding by click
-			$('.js-prev').on('click', function(){ touchslider.prevClick(el) });
-			$('.js-next').on('click', function(){ touchslider.nextClick(el) });
+			document.querySelector('.js-prev').addEventListener('click', function(){ 
+				touchslider.prevClick(el); 
+			});
+			document.querySelector('.js-next').addEventListener('click', function(){ 
+				touchslider.nextClick(el); 
+			});
 			//Activate arrows/managing buttons
 			touchslider.doSlide(el, 0, '0s');
 		}		
@@ -185,16 +189,16 @@ var touchslider = {
 			 
 		//next, prev buttons activity
 		if (x === 0) {
-			$('.js-next').removeClass('is-active');
+			document.querySelector('.js-next').classList.remove('is-active');
 			if ( Math.abs(x) < (this.hiddenWidth - this.padding/2) ) {
-				$('.js-prev').addClass('is-active');
+				document.querySelector('.js-prev').classList.add('is-active');
 			}
 		} else if ( Math.abs(x) >=  (this.hiddenWidth - this.padding/2) ){
-			$('.js-prev').removeClass('is-active');
-			$('.js-next').addClass('is-active');
+			document.querySelector('.js-prev').classList.remove('is-active');
+			document.querySelector('.js-next').classList.add('is-active');
 		} else {
-			$('.js-prev').addClass('is-active');
-			$('.js-next').addClass('is-active');
+			document.querySelector('.js-prev').classList.add('is-active');
+			document.querySelector('.js-next').classList.add('is-active');
 		}
 	},	
 		
@@ -253,34 +257,39 @@ var touchslider = {
 //----------------------------------------------------------------------------------------------------------
 var lazyLoad = {
 	slideUpSetUp: function (/*string*/ elemSelector, /*Slide height, int*/ slideDelta) {
-		var elem = elemSelector; 
+		var elems = document.querySelectorAll(elemSelector); 
 		var slideDelta = slideDelta; 
-		var slideUp = lazyLoad.inWindow(elem, slideDelta);	
+		var slideUp = lazyLoad.inWindow(elems, slideDelta);	
 
-		if (slideUp) {
-			slideUp.addClass('active');
+		if (slideUp.length > 0) {
+			slideUp.forEach( function(el){
+				el.classList.add('active');
+			});
 		}
 
-		$(window).scroll(function () {
-			var slideUp = lazyLoad.inWindow(elem, slideDelta);
-			slideUp.addClass('active');
+		window.addEventListener('scroll', function () {
+			var slideUp = lazyLoad.inWindow(elems, slideDelta);
+			if (slideUp.length > 0) {
+				slideUp.forEach( function(el){
+					el.classList.add('active');
+				});
+			}
 		});		
 	},
 
-	inWindow: function (elem, slideDelta) {
-		var scrollTop = $(window).scrollTop(),
-			windowHeight = $(window).height(),
-			currentEls = $(elem),
+	inWindow: function (elems, slideDelta) {
+		var scrollTop = window.scrollY,
+			windowHeight =  window.innerHeight,
+			currentEls = elems,
 			result = [];
 		
-		currentEls.each(function(){
-			var el = $(this);
-			var offset = el.offset();
-			if(scrollTop <= offset.top && ( (offset.top - slideDelta) + el.height()) < (scrollTop + windowHeight))
-				result.push(this);
+		currentEls.forEach(function(el){
+			if( scrollTop <= el.offsetTop && 
+				((el.offsetTop - slideDelta) + el.offsetHeight) < (scrollTop + windowHeight) )
+				result.push(el);
 		});
 		
-	  	return $(result);
+	  	return result;
 	}
 }
 
