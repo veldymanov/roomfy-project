@@ -31,12 +31,6 @@ gulp.task('html', function() {
 ////////////////////////////////////////////////////
 // CSS Tasks
 ////////////////////////////////////////////////////
-//copy normalize.css
-gulp.task('normalize.css', function() {
-    gulp.src(['node_modules/normalize.css/normalize.css' ])
-        .pipe(gulp.dest('src/external_libraries/normalize_css'));
-});
-
 //run sass
 gulp.task('sass', () =>
     gulp.src('src/**/*.scss')
@@ -54,12 +48,6 @@ gulp.task('css', () =>
 ////////////////////////////////////////////////////
 // Script Tasks
 ////////////////////////////////////////////////////
-//copy jquery
-gulp.task('jquery', function() {
-    gulp.src(['node_modules/jquery/dist/jquery.js' ])
-        .pipe(gulp.dest('src/external_libraries/jquery/'));
-});
-
 //update browser-sync
 gulp.task('scripts', function () {
     gulp.src(['src/**/*.js'])
@@ -204,8 +192,8 @@ gulp.task('watch', function () {
 ////////////////////////////////////////////////////
 gulp.task('default', [
     'html',
-    'normalize.css', 'sass', 'css',
-    'jquery', 'scripts',
+    'sass', 'css',
+    'scripts',
     'pic',
     'browser-sync',
     'watch'

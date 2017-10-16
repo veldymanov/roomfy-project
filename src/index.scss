@@ -24,18 +24,18 @@ $btnBgrColor: #EBEBEB;
 //********************************************
 @font-face { 
 	font-family: circular-std-book;
-	src: url(../../common_files/fonts/CircularStd-Book.otf);
+	src: url(home/assets/fonts/CircularStd-Book.otf);
 }
 
 @font-face {
   	font-family: circular-std-book;
-	src: url(../../common_files/fonts/CircularStd-Bold.otf);
+	src: url(home/assets/fonts/CircularStd-Bold.otf);
   	font-weight: bold;    
 }
 
 @font-face {
   	font-family: circular-std-book;
-	src: url(../../common_files/fonts/CircularStd-BookItalic.otf);
+	src: url(home/assets/fonts/CircularStd-BookItalic.otf);
   	font-style: italic;    
 }
 
@@ -167,7 +167,7 @@ ul.links {
 
 .search {	
 	&::before {
-		background: url(../img/icons/search-icon.z.svg) no-repeat; 
+		background: url(home/assets/img/icons/search-icon.z.svg) no-repeat; 
 		background-size: contain;	
 		content: " ";  
 		height: 30px;
@@ -203,7 +203,7 @@ ul.links {
 select#choice {
 	-webkit-appearance: none; //remove arrow
 	appearance: none;
-	background: url(../img/icons/arrow.z.svg) no-repeat 90% #ffffff;
+	background: url(home/assets/img/icons/arrow.z.svg) no-repeat 90% #ffffff;
 	background-size: 27px 9px;
 	border: solid 1px #c6c6c6;
 	border-radius: 100px;
@@ -391,7 +391,7 @@ li.touch-list-item {
 				bottom: 20px;
 				position: absolute;
 				&::after {
-					background: url(../img/icons/opened-door-icon.z.svg) no-repeat; 
+					background: url(home/assets/img/icons/opened-door-icon.z.svg) no-repeat; 
 					background-size: contain;	
 					content: " ";
 					bottom: -10px;  

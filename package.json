@@ -1,15 +1,13 @@
 {
-  "name": "template",
+  "name": "roomfy",
   "version": "1.0.0",
   "author": "veldymanov",
   "license": "MIT",
-  "description": "template",
+  "description": "roomfy",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
-    "normalize.css": "^7.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

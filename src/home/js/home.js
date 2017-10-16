@@ -20,7 +20,7 @@ var touchslider = {
 			
 		//<li class='js-touch-list-item'>
 		el.querySelectorAll('.js-touch-list-item').forEach( function(el) {
-			el.style.cssText = "height: 95%; position: absolute;";
+			el.style.cssText = `height: 95%; position: absolute;`;
 			el.style.left = x + 'px';
 			el.style.width = cellWidth + 'px'; 
 			x += cellWidth + padding;
