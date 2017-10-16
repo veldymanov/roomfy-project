@@ -22,16 +22,6 @@ div.js-touch-panel {
 			//--------------------------
 			height: 100%;
 			li.js-touch-list-item {
-<<<<<<< HEAD
-				/* JS Set Up
-				'height': '95%',
-				'left': x + 'px',
-				'position': 'absolute',
-			//	'top': padding + 'px',
-				'width': cellWidth + 'px'	
-				*/
-				img {
-=======
 				//JS Set Up----------------
 				//'height': '95%',
 				//'left': x + 'px',
@@ -41,7 +31,6 @@ div.js-touch-panel {
 				img {
 					//Stop img blue-overlay
 					-moz-user-select: none;
->>>>>>> js-touchslider
 					user-select: none;
 				}
 			}
