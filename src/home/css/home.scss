@@ -331,7 +331,7 @@ select#choice {
 						color: #ffffff;
 					}
 					@include respond-to(max-width, 480px){
-						padding: 13px 10px;
+						padding: 11px 10px;
 					}
 
 				}
@@ -350,7 +350,7 @@ div.touch-panel {
 	div.touch-box {
 		height: 442px;
 	}
-	ul.touch-list {
+	ul.touch-list { //gridid
 		li.touch-list-item {
 
 		}
@@ -363,7 +363,7 @@ li.touch-list-item {
 	height: 442px;
 	overflow: hidden;
 	transition: box-shadow .5s;
-	width: 366px;
+	width: 366px; //cellWidth 
 	&:hover {
 		box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.25);
 	}
@@ -450,6 +450,9 @@ li.touch-list-item {
 		@include respond-to(max-width, 830px){
 			padding: 0;			
 		}
+		@include respond-to(min-width, 1200px){
+			flex-basis: 30%;			
+		}		
 		h3 {
 			text-align: center;
 		}
@@ -470,11 +473,12 @@ li.touch-list-item {
 			border: none;
 			border-radius: 71px;
 			color: #ffffff;
+			cursor: pointer;
 			font-size: 36px;
 			font-weight: bold;
 			left: 50%;
 			outline: none;
-			padding: 19px 40px 23px 40px;
+			padding: 20px 40px;
 			position: relative;
 			text-align: center;
 			transform: translateX(-50%);

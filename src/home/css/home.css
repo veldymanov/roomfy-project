@@ -16,31 +16,33 @@
     @media (max-width: 480px) {
       .header h1 {
         padding-left: 5px; } }
+  .header nav {
+    height: 100%; }
 
-.nav {
+ul.nav {
   display: flex;
   padding: 14px 10px 16px 0;
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
 
-.nav-item {
+li.nav-item {
   height: 47px;
   margin-left: 3px; }
-  .nav-item a {
+  li.nav-item a {
     border-radius: 23.5px;
     color: #ffffff;
     height: 100%;
     padding: 11px 20px;
     text-align: center;
     width: 100%; }
-    .nav-item a.active {
+    li.nav-item a.active {
       background-color: #ff7800; }
     @media (max-width: 480px) {
-      .nav-item a {
-        padding: 13px 10px; } }
+      li.nav-item a {
+        padding: 11px 10px; } }
   @media (max-width: 480px) {
-    .nav-item {
+    li.nav-item {
       width: auto; } }
 
 @keyframes slideUp {
@@ -58,6 +60,7 @@
 
 div.js-touch-panel {
   position: relative; }
+<<<<<<< HEAD
   div.js-touch-panel div.js-touch-box {
     /*JS Set Up
 		margin: '0 auto',
@@ -85,6 +88,16 @@ div.js-touch-panel {
 				*/ }
         div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
           user-select: none; }
+=======
+  div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
+    cursor: pointer;
+    position: absolute; }
+  div.js-touch-panel div.js-touch-box ul.js-touch-list {
+    height: 100%; }
+    div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
+      -moz-user-select: none;
+      user-select: none; }
+>>>>>>> js-touchslider
 
 svg.js-next, svg.js-prev {
   height: 40px;
@@ -411,7 +424,7 @@ select#choice {
           color: #ffffff; }
         @media (max-width: 480px) {
           .cities header nav .nav-item a {
-            padding: 13px 10px; } }
+            padding: 11px 10px; } }
       @media (max-width: 480px) {
         .cities header nav .nav-item {
           margin-right: 2px; } }
@@ -491,6 +504,9 @@ li.touch-list-item {
     @media (max-width: 830px) {
       .articles article {
         padding: 0; } }
+    @media (min-width: 1200px) {
+      .articles article {
+        flex-basis: 30%; } }
     .articles article h3 {
       text-align: center; }
     .articles article p {
@@ -508,11 +524,12 @@ li.touch-list-item {
       border: none;
       border-radius: 71px;
       color: #ffffff;
+      cursor: pointer;
       font-size: 36px;
       font-weight: bold;
       left: 50%;
       outline: none;
-      padding: 19px 40px 23px 40px;
+      padding: 20px 40px;
       position: relative;
       text-align: center;
       transform: translateX(-50%); }
