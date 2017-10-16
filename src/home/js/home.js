@@ -91,22 +91,6 @@ var touchslider = {
 	},
 		
 	// Fit Touch Area to Elements Quantity
-<<<<<<< HEAD
-	touchAreaSize: function(gridid){
-		$(gridid).parent().each( function(){ 
-				var touchAreaWidth100 = parseInt($(this).css({width: '100%'}).css('width'), 10);
-				var elNumber = parseInt(touchAreaWidth100 / touchslider.colWidth, 10);
-				
-				var touchAreaWidth = elNumber * touchslider.colWidth;
-				
-				$(this).css({ 
-					width: touchAreaWidth 
-				});
-
-				//Used below
-				touchslider.hiddenWidth = ( touchslider.width - (touchslider.padding / 2) ) - touchAreaWidth;				
-			});	
-=======
 	touchAreaSize: function(/*element*/el){			
 		el.parentElement.style.width = '100%';
 		var touchAreaWidth100 = el.parentElement.offsetWidth;
@@ -117,7 +101,6 @@ var touchslider = {
 
 		//Used below
 		touchslider.hiddenWidth = touchslider.width - touchAreaWidth;
->>>>>>> js-touchslider
 	},
 		
 	makeTouchable: function(/*element*/ el) {
@@ -131,17 +114,9 @@ var touchslider = {
 	 * variables about where the touch started.  We also record the
 	 * start time so we can do momentum.
 	 */
-<<<<<<< HEAD
-	touchStart: function(/*JQuery*/ elem, /*event*/ e) {
-		 elem.css({
-			'transition': 'left 0s'
-		 });
-			 
-=======
 	touchStart: function(/*element*/ el, /*event*/ e) {
 		el.style.transition = 'left 0s';
 
->>>>>>> js-touchslider
 		this.startX = e.targetTouches[0].clientX;
 		this.startY = e.targetTouches[0].clientY;
 		this.slider = 0; 							// Starting sliding position
@@ -194,15 +169,9 @@ var touchslider = {
 			this.doSlide(el, 0, '1s');
 
 			this.startX = null;
-<<<<<<< HEAD
-		} else if ( Math.abs(this.getLeft(elem))  > this.hiddenWidth ) {
-			// This means they dragged to the left past the last item
-			this.doSlide(elem, -this.hiddenWidth, '1s');
-=======
 		} else if ( Math.abs( parseInt(el.style.left, 10) )  > this.hiddenWidth ) {
 			// This means they dragged to the left past the last item
 			this.doSlide(el, (-this.hiddenWidth + this.padding / 2), '1s');
->>>>>>> js-touchslider
 			 
 			this.startX = null;
 		} else {
@@ -218,16 +187,6 @@ var touchslider = {
 		el.style.left = x + 'px';
 		el.style.transition = 'left ' + duration;
 			 
-<<<<<<< HEAD
-		if (x === 0) {
-			$('.js-next').removeClass('is-active');
-			if ( Math.abs(x) <  this.hiddenWidth ) {
-				$('.js-prev').addClass('is-active');
-			}
-		} else if ( Math.abs(x) >=  this.hiddenWidth ){
-			$('.js-prev').removeClass('is-active');
-			$('.js-next').addClass('is-active');
-=======
 		//next, prev buttons activity
 		if (x === 0) {
 			el.parentElement.querySelector('.js-next').classList.remove('is-active');
@@ -237,7 +196,6 @@ var touchslider = {
 		} else if ( Math.abs(x) >=  (this.hiddenWidth - this.padding/2) ){
 			el.parentElement.querySelector('.js-prev').classList.remove('is-active');
 			el.parentElement.querySelector('.js-next').classList.add('is-active');
->>>>>>> js-touchslider
 		} else {
 			el.parentElement.querySelector('.js-prev').classList.add('is-active');
 			el.parentElement.querySelector('.js-next').classList.add('is-active');
