@@ -40,7 +40,7 @@ li.nav-item {
       background-color: #ff7800; }
     @media (max-width: 480px) {
       li.nav-item a {
-        padding: 13px 10px; } }
+        padding: 11px 10px; } }
   @media (max-width: 480px) {
     li.nav-item {
       width: auto; } }
@@ -66,8 +66,8 @@ div.js-touch-panel {
   div.js-touch-panel div.js-touch-box ul.js-touch-list {
     height: 100%; }
     div.js-touch-panel div.js-touch-box ul.js-touch-list li.js-touch-list-item img {
-      user-select: none;
-      -moz-user-select: none; }
+      -moz-user-select: none;
+      user-select: none; }
 
 svg.js-next, svg.js-prev {
   height: 40px;
@@ -394,7 +394,7 @@ select#choice {
           color: #ffffff; }
         @media (max-width: 480px) {
           .cities header nav .nav-item a {
-            padding: 13px 10px; } }
+            padding: 11px 10px; } }
       @media (max-width: 480px) {
         .cities header nav .nav-item {
           margin-right: 2px; } }
@@ -474,6 +474,9 @@ li.touch-list-item {
     @media (max-width: 830px) {
       .articles article {
         padding: 0; } }
+    @media (min-width: 1200px) {
+      .articles article {
+        flex-basis: 30%; } }
     .articles article h3 {
       text-align: center; }
     .articles article p {
@@ -491,11 +494,12 @@ li.touch-list-item {
       border: none;
       border-radius: 71px;
       color: #ffffff;
+      cursor: pointer;
       font-size: 36px;
       font-weight: bold;
       left: 50%;
       outline: none;
-      padding: 19px 40px 23px 40px;
+      padding: 20px 40px;
       position: relative;
       text-align: center;
       transform: translateX(-50%); }
