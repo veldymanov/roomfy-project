@@ -15,11 +15,11 @@
 		}			
 	}
 	nav {
-
+		height: 100%;
 	}
 }
 
-.nav {
+ul.nav {
 	display: flex;
 	padding: 14px 10px 16px 0;
 	position: relative;
@@ -27,7 +27,7 @@
 	transform: translateY(-50%);
 }
 
-.nav-item {	
+li.nav-item {	
 	height: 47px;
 	margin-left: 3px;
 	//width: 132px;
