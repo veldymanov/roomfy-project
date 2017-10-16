@@ -2,7 +2,6 @@
 //	Touch Panel (don't change)
 //**********************************************************************************************
 div.js-touch-panel {
-	-webkit-tap-highlight-color: transparent;
 	position: relative;
 	div.js-touch-box {
 		//JS Set Up----------
@@ -31,6 +30,7 @@ div.js-touch-panel {
 				//--------------------------
 				img {
 					//Stop img blue-overlay
+					-moz-user-select: none;
 					user-select: none;
 				}
 			}

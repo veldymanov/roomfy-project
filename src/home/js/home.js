@@ -52,10 +52,10 @@ var touchslider = {
 			})
 				
 			//Sliding by click
-			document.querySelector('.js-prev').addEventListener('click', function(){ 
+			el.parentElement.querySelector('.js-prev').addEventListener('click', function(){ 
 				touchslider.prevClick(el); 
 			});
-			document.querySelector('.js-next').addEventListener('click', function(){ 
+			el.parentElement.querySelector('.js-next').addEventListener('click', function(){ 
 				touchslider.nextClick(el); 
 			});
 			//Activate arrows/managing buttons
@@ -189,16 +189,16 @@ var touchslider = {
 			 
 		//next, prev buttons activity
 		if (x === 0) {
-			document.querySelector('.js-next').classList.remove('is-active');
+			el.parentElement.querySelector('.js-next').classList.remove('is-active');
 			if ( Math.abs(x) < (this.hiddenWidth - this.padding/2) ) {
-				document.querySelector('.js-prev').classList.add('is-active');
+				el.parentElement.querySelector('.js-prev').classList.add('is-active');
 			}
 		} else if ( Math.abs(x) >=  (this.hiddenWidth - this.padding/2) ){
-			document.querySelector('.js-prev').classList.remove('is-active');
-			document.querySelector('.js-next').classList.add('is-active');
+			el.parentElement.querySelector('.js-prev').classList.remove('is-active');
+			el.parentElement.querySelector('.js-next').classList.add('is-active');
 		} else {
-			document.querySelector('.js-prev').classList.add('is-active');
-			document.querySelector('.js-next').classList.add('is-active');
+			el.parentElement.querySelector('.js-prev').classList.add('is-active');
+			el.parentElement.querySelector('.js-next').classList.add('is-active');
 		}
 	},	
 		
