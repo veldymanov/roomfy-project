@@ -48,15 +48,20 @@ var touchslider = {
 			window.addEventListener('resize', function() {
 				touchslider.touchAreaSize(el);
 			})
-				
-			//Sliding by click
-			el.parentElement.querySelector('.js-prev').addEventListener('click', function(){ 
+
+			/*	
+				Sliding by click
+			*/
+			touchslider.prevBtn = el.parentElement.querySelector('.js-prev');
+			touchslider.nextBtn = el.parentElement.querySelector('.js-next');
+
+			touchslider.prevBtn.addEventListener('click', function(){ 
 				touchslider.prevClick(el); 
 			});
-			el.parentElement.querySelector('.js-next').addEventListener('click', function(){ 
+			touchslider.nextBtn.addEventListener('click', function(){ 
 				touchslider.nextClick(el); 
 			});
-			//Activate arrows/managing buttons
+			//Activate managing buttons/arrows
 			touchslider.doSlide(el, 0, '0s');
 		}		
 	},
@@ -187,16 +192,16 @@ var touchslider = {
 			 
 		//next, prev buttons activity
 		if (x === 0) {
-			el.parentElement.querySelector('.js-next').classList.remove('is-active');
+			this.nextBtn.classList.remove('is-active');
 			if ( Math.abs(x) < (this.hiddenWidth - this.padding/2) ) {
-				el.parentElement.querySelector('.js-prev').classList.add('is-active');
+				this.prevBtn.classList.add('is-active');
 			}
 		} else if ( Math.abs(x) >=  (this.hiddenWidth - this.padding/2) ){
-			el.parentElement.querySelector('.js-prev').classList.remove('is-active');
-			el.parentElement.querySelector('.js-next').classList.add('is-active');
+			this.prevBtn.classList.remove('is-active');
+			this.nextBtn.classList.add('is-active');
 		} else {
-			el.parentElement.querySelector('.js-prev').classList.add('is-active');
-			el.parentElement.querySelector('.js-next').classList.add('is-active');
+			this.prevBtn.classList.add('is-active');
+			this.nextBtn.classList.add('is-active');
 		}
 	},	
 		
