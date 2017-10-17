@@ -303,4 +303,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	//	Keyframes, Lazy Load Slide Up listener
 	lazyLoad.slideUpSetUp('.js-slide-up', 400);	
+
+	//**********************************
+	//Dropdown-Menu
+	//**********************************
+	//Open Dropdown-Menu
+	document.querySelector('.js-choiceBtn').addEventListener('click', function(){
+		document.querySelector('.js-dropdown').classList.add('active');
+	}, false);
+	//Close Dropdown-Menu
+	window.addEventListener('click', function(e){
+		if ( document.querySelector('.js-choiceBtn').contains(e.target) ) { return; }
+		document.querySelector('.js-dropdown').classList.remove('active');
+	});
+	//
+
 });

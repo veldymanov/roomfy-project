@@ -37,12 +37,25 @@
                <div class="search">
                   <input id="search" type="text" placeholder="Plaats, omgeving, etc">
                </div>
-               <div class="choice"> 
-                  <select id="choice" required>
-                     <option value="" disabled selected hidden>Max. huurprijs</option>   
-                     <option value="value2">Value 2</option>
-                     <option value="value3">Value 3</option>
-                  </select>
+               <div class="choice">
+                  <input id="choice" type="text" placeholder="Max. huurprijs" disabled />
+
+                  <svg class="choiceBtn js-choiceBtn" viewBox="0 0 250 400">
+                     <path d="M 225 25 L 25 200 L 225 375"/>
+                  </svg>
+
+                  <div class="dropdown js-dropdown">
+                     <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);">&euro; 100</a></li>
+                        <li><a href="javascript:void(0);">&euro; 200</a></li>
+                        <li><a href="javascript:void(0);">&euro; 300</a></li> 
+                        <li><a href="javascript:void(0);">&euro; 400</a></li> 
+                        <li><a href="javascript:void(0);">&euro; 600</a></li>
+                        <li><a href="javascript:void(0);">&euro; 700</a></li>
+                        <li><a href="javascript:void(0);">&euro; 800</a></li> 
+                        <li><a href="javascript:void(0);">&euro; 900</a></li>                                       
+                     </ul>
+                  </div>
                </div>  
             </div>
          </section>
