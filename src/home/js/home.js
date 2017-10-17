@@ -19,12 +19,6 @@ var touchslider = {
 		el.style.cssText = "left: 0px; list-style-type: none; margin: 0; padding: 0; position: relative;"; 
 			
 		//<li class='js-touch-list-item'>
-		/*
-		el.querySelectorAll('.js-touch-list-item').forEach( function(el) {
-			el.style.cssText = `height: 95%; left: ${x}px; position:absolute; width: ${cellWidth}px;`;
-			x += cellWidth + padding;
-		});
-		*/
 		var touchListItems = el.querySelectorAll('.js-touch-list-item');
 		for(let i = 0; i < touchListItems.length; i++){
 			touchListItems[i].style.cssText = `height: 95%; left: ${x}px; position:absolute; width: ${cellWidth}px;`;
@@ -271,11 +265,6 @@ var lazyLoad = {
 		var slideUp = lazyLoad.inWindow(elems, slideDelta);	
 
 		if (slideUp.length > 0) {
-			/* forEach is not supported by Edge
-			slideUp.forEach( function(el){
-				el.classList.add('active');
-			});
-			*/
 			for(let i = 0; i < slideUp.length; i++){
 				slideUp[i].classList.add('active');
 			}
@@ -296,13 +285,6 @@ var lazyLoad = {
 			windowHeight =  window.innerHeight,
 			currentEls = elems,
 			result = [];
-		/* forEach is not supported by Edge
-		currentEls.forEach(function(el){
-			if( scrollTop <= el.offsetTop && 
-				((el.offsetTop - slideDelta) + el.offsetHeight) < (scrollTop + windowHeight) )
-				result.push(el);
-		});
-		*/
 		for(let i = 0; i < currentEls.length; i++){
 			if( scrollTop <= currentEls[i].offsetTop && 
 				((currentEls[i].offsetTop - slideDelta) + currentEls[i].offsetHeight) < (scrollTop + windowHeight) )
@@ -334,13 +316,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.querySelector('.js-dropdown').classList.remove('active');
 	});
 	//Add selected value to input
-	/* forEach is not supported by Edge
-	document.querySelectorAll('.js-dropdown-menu-item').forEach( function(item){
-		item.addEventListener('click', function(){
-			document.querySelector('#choice').value = this.querySelector('a').innerHTML;
-		});
-	});
-	*/
 	var dropDownMenuItems = document.querySelectorAll('.js-dropdown-menu-item');
 	for(let i = 0; i < dropDownMenuItems.length; i++){
 		dropDownMenuItems[i].addEventListener('click', function(){
