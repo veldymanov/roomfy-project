@@ -11,17 +11,3 @@
 .js-slide-up.active{
 	animation: slideUp .8s 0s ease forwards;
 }
-
-// dropdown-menu slide down
-/*
-@keyframes heightSlideDown {
-	0% { height: 0;	}
-	100% { height: 180px; }
-}
-.js-dropdown {
-	height: 0;
-}
-.js-dropdown.active {
-	animation: heightSlideDown .8s 0s ease forwards;
-}
-*/
