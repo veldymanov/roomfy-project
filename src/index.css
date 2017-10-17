@@ -302,6 +302,7 @@ ul.links {
 .choice {
   position: relative; }
   .choice #choice {
+    opacity: 1;
     width: 252px; }
     .choice #choice:disabled {
       background-color: #ffffff; }

@@ -161,7 +161,7 @@ ul.links {
 				outline: none;
 				padding: 18px 0 18px 30px;
 				&::placeholder {
-					color: #6E6E6E;//rgba(67, 67, 67, 0.65);
+					color: #6E6E6E;
 				}
 				@include respond-to(max-width, 550px){
 					padding: 8px 0 8px 30px;	
@@ -220,6 +220,7 @@ ul.links {
 .choice {
 	position: relative;
 	#choice {
+		opacity: 1;
 		width: 252px;
 		&:disabled {
 			background-color: #ffffff;
