@@ -21,7 +21,9 @@ var touchslider = {
 		//<li class='js-touch-list-item'>
 		var touchListItems = el.querySelectorAll('.js-touch-list-item');
 		for(let i = 0; i < touchListItems.length; i++){
-			touchListItems[i].style.cssText = `height: 95%; left: ${x}px; position:absolute; width: ${cellWidth}px;`;
+			touchListItems[i].style.cssText = "height: 95%; position:absolute;";
+			touchListItems[i].style.left = x + "px";
+			touchListItems[i].style.width = cellWidth + "px";
 			x += cellWidth + padding;			
 		}
 		/*
