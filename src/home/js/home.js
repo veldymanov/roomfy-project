@@ -317,6 +317,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		//if ( document.querySelector('.js-choiceBtn').contains(e.target) ) { return; }
 		document.querySelector('.js-dropdown').classList.remove('active');
 	});
-	//
+	//Add selected value to input
+	document.querySelectorAll('.js-dropdown-menu-item').forEach( function(item){
+		item.addEventListener('click', function(){
+			document.querySelector('#choice').value = this.querySelector('a').innerHTML;
+		});
+	});
 
 });

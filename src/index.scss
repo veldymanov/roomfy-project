@@ -244,13 +244,14 @@ ul.links {
 	}
 	div.dropdown {
 		border-radius: 8px;
-		display: none;
+		height: 0;
 		overflow: hidden;
 		position: absolute;
 		top: 80px;
+		transition: height .5s;
 		width: 100%;
 		&.active {
-			display: block;
+			height: 180px;
 		}
 		@include respond-to(max-width, 550px){
 			top: 60px;			

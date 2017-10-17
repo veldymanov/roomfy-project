@@ -58,6 +58,18 @@ li.nav-item {
 .js-slide-up.active {
   animation: slideUp .8s 0s ease forwards; }
 
+/*
+@keyframes heightSlideDown {
+	0% { height: 0;	}
+	100% { height: 180px; }
+}
+.js-dropdown {
+	height: 0;
+}
+.js-dropdown.active {
+	animation: heightSlideDown .8s 0s ease forwards;
+}
+*/
 div.js-touch-panel {
   position: relative; }
   div.js-touch-panel div.js-touch-box svg.js-prev, div.js-touch-panel div.js-touch-box svg.js-next {
@@ -322,13 +334,14 @@ ul.links {
         top: 24%; } }
   .choice div.dropdown {
     border-radius: 8px;
-    display: none;
+    height: 0;
     overflow: hidden;
     position: absolute;
     top: 80px;
+    transition: height .5s;
     width: 100%; }
     .choice div.dropdown.active {
-      display: block; }
+      height: 180px; }
     @media (max-width: 550px) {
       .choice div.dropdown {
         top: 60px; } }
