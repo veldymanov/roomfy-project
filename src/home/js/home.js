@@ -308,12 +308,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	//Dropdown-Menu
 	//**********************************
 	//Open Dropdown-Menu
-	document.querySelector('.js-choiceBtn').addEventListener('click', function(){
-		document.querySelector('.js-dropdown').classList.add('active');
+	document.querySelector('.js-choiceBtn').addEventListener('click', function(e){
+		e.stopPropagation();
+		document.querySelector('.js-dropdown').classList.toggle('active');
 	}, false);
 	//Close Dropdown-Menu
 	window.addEventListener('click', function(e){
-		if ( document.querySelector('.js-choiceBtn').contains(e.target) ) { return; }
+		//if ( document.querySelector('.js-choiceBtn').contains(e.target) ) { return; }
 		document.querySelector('.js-dropdown').classList.remove('active');
 	});
 	//
