@@ -313,9 +313,6 @@ ul.links {
     width: 100%; }
     .choice div.dropdown.active {
       height: 180px; }
-    @media (max-width: 550px) {
-      .choice div.dropdown {
-        top: 60px; } }
     .choice div.dropdown ul.dropdown-menu {
       background: white;
       height: 180px;
