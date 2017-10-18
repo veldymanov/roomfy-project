@@ -36,8 +36,12 @@ li.nav-item {
     padding: 11px 20px;
     text-align: center;
     width: 100%; }
+    li.nav-item a:hover {
+      background-color: #D1D1D1; }
     li.nav-item a.active {
       background-color: #ff7800; }
+    li.nav-item a:hover.active {
+      background-color: #DD6B04; }
     @media (max-width: 480px) {
       li.nav-item a {
         padding: 11px 10px; } }
@@ -196,10 +200,13 @@ ul.links {
   position: relative;
   width: auto; }
   .form figure picture {
-    display: block; }
+    display: block;
+    overflow: hidden; }
     .form figure picture img {
       display: block;
-      width: 100%; }
+      height: calc(100vh - 40px - 77px);
+      min-height: 370px;
+      min-width: 100vw; }
   .form h2 {
     color: #ffffff;
     font-size: 60px;
@@ -212,21 +219,19 @@ ul.links {
     @media (max-width: 800px) {
       .form h2 {
         font-size: 40px;
-        top: 20px;
         width: auto; } }
     @media (max-width: 700px) {
       .form h2 {
-        top: 0px;
         width: 80%; } }
     @media (max-width: 550px) {
       .form h2 {
-        font-size: 32px;
+        font-size: 36px;
         margin: 10px 0; } }
   .form > div {
     display: flex;
     left: 50%;
     position: absolute;
-    top: 281px;
+    top: 40%;
     transform: translate(-50%); }
     .form > div div {
       position: relative; }
@@ -240,20 +245,11 @@ ul.links {
         padding: 18px 0 18px 30px; }
         .form > div div input::placeholder {
           color: #6E6E6E; }
-        @media (max-width: 550px) {
-          .form > div div input {
-            padding: 8px 0 8px 30px; } }
     @media (max-width: 800px) {
       .form > div {
         flex-wrap: wrap;
         justify-content: center;
-        top: 200px; } }
-    @media (max-width: 700px) {
-      .form > div {
-        top: 150px; } }
-    @media (max-width: 480px) {
-      .form > div {
-        top: 100px; } }
+        top: 40%; } }
 
 .search::before {
   background: url(home/assets/img/icons/search-icon.z.svg) no-repeat;

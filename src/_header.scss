@@ -38,9 +38,15 @@ li.nav-item {
 		padding: 11px 20px;
 		text-align: center;
 		width: 100%;
+		&:hover {
+			background-color: #D1D1D1;
+		}		
 		&.active {
 			background-color: #ff7800;
 		}
+		&:hover.active {
+			background-color: #DD6B04;
+		}		
 		@include respond-to(max-width, 480px){
 			padding: 11px 10px;
 		}

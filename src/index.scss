@@ -100,10 +100,13 @@ ul.links {
 	width: auto;
 	figure {
 		picture {
-			display: block;	
+			display: block;
+			overflow: hidden;	
 			img{
 				display: block;
-				width: 100%;
+				height: calc(100vh - 40px - 77px);
+				min-height: 370px;
+				min-width: 100vw;
 			}
 		}
 	}
@@ -118,15 +121,13 @@ ul.links {
 		width: 513px;
 		@include respond-to(max-width, 800px){
 			font-size: 40px;
-			top: 20px;
 			width: auto;	
 		}	
 		@include respond-to(max-width, 700px){
-			top: 0px;
 			width: 80%;	
 		}
 		@include respond-to(max-width, 550px){
-			font-size: 32px;
+			font-size: 36px;
 			margin: 10px 0;	
 		}			
 	}
@@ -134,7 +135,7 @@ ul.links {
 		display: flex;
 		left: 50%;	
 		position: absolute;
-		top: 281px;
+		top: 40%;
 		transform: translate(-50%);
 		div {
 			position: relative;
@@ -148,22 +149,13 @@ ul.links {
 				padding: 18px 0 18px 30px;
 				&::placeholder {
 					color: #6E6E6E;
-				}
-				@include respond-to(max-width, 550px){
-					padding: 8px 0 8px 30px;	
-				}			
+				}		
 			}
 		}
 		@include respond-to(max-width, 800px){
 			flex-wrap: wrap;
 			justify-content: center;
-			top: 200px;		
-		}
-		@include respond-to(max-width, 700px){
-			top: 150px;		
-		}	
-		@include respond-to(max-width, 480px){
-			top: 100px;		
+			top: 40%;		
 		}	
 	}
 }
