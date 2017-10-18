@@ -268,14 +268,14 @@ ul.links {
 				padding: 7px 10px 7px 30px;
 				&:hover {
 					background-color: #0096DF;
+					a {
+						color: #FFFFFF;
+					}		
 				}
 				a {
 					color: #6E6E6E;
 					display: block;
-					text-decoration: none;
-					&:hover {
-						color: #FFFFFF;
-					}						
+					text-decoration: none;					
 				}
 			}
 		}
