@@ -175,18 +175,6 @@ div, section, figure {
   margin: 0;
   padding: 0; }
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 5px; }
-
-::-webkit-scrollbar-track {
-  background-color: #fbfbfb;
-  border-radius: 8px; }
-
-::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: rgba(180, 180, 180, 0.8); }
-
 ul.links {
   list-style-type: none;
   margin: 0;
@@ -341,6 +329,15 @@ ul.links {
       margin: 0;
       overflow: auto;
       padding: 0; }
+      .choice div.dropdown ul.dropdown-menu::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 5px; }
+      .choice div.dropdown ul.dropdown-menu::-webkit-scrollbar-track {
+        background-color: #fbfbfb;
+        border-radius: 8px; }
+      .choice div.dropdown ul.dropdown-menu::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: rgba(180, 180, 180, 0.8); }
       .choice div.dropdown ul.dropdown-menu li {
         border-bottom: 1px solid #FBFBFB;
         list-style-type: none;
@@ -351,6 +348,8 @@ ul.links {
           color: #6E6E6E;
           display: block;
           text-decoration: none; }
+          .choice div.dropdown ul.dropdown-menu li a:hover {
+            color: #FFFFFF; }
 
 .screenshots {
   color: #ffffff;

@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	//Dropdown-Menu
 	//**********************************
 	//Open Dropdown-Menu
-	document.querySelector('.js-choiceBtn').addEventListener('click', function(e){
+	document.querySelector('.js-choice').addEventListener('click', function(e){
 		e.stopPropagation();
 		document.querySelector('.js-dropdown').classList.toggle('active');
 	}, false);

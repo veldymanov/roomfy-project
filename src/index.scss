@@ -61,20 +61,6 @@ div, section, figure {
 //*********************************************
 //	Base Classes
 //*********************************************
-//Webkit Scrollbar
-::-webkit-scrollbar {
-	-webkit-appearance: none;
-	width: 5px;
-}
-::-webkit-scrollbar-track {
-	background-color: rgba(251, 251, 251, 1);
-	border-radius: 8px;
-}
-::-webkit-scrollbar-thumb {
-	border-radius: 8px;
-	background-color: rgba(180, 180, 180, .8);
-}
-
 ul.links {
 	list-style-type: none;
 	margin: 0;
@@ -257,12 +243,25 @@ ul.links {
 		@include respond-to(max-width, 550px){
 			top: 60px;			
 		}
-		ul.dropdown-menu { 
+		ul.dropdown-menu {
 			background: rgba(255, 255, 255, 1);
 			height: 180px;
 			margin: 0;
 			overflow: auto;
 			padding: 0;
+			//Webkit Scrollbar
+			&::-webkit-scrollbar {
+				-webkit-appearance: none;
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track {
+				background-color: rgba(251, 251, 251, 1);
+				border-radius: 8px;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 8px;
+				background-color: rgba(180, 180, 180, .8);
+			}
 			li {
 				border-bottom: 1px solid #FBFBFB;
 				list-style-type: none;
@@ -273,7 +272,10 @@ ul.links {
 				a {
 					color: #6E6E6E;
 					display: block;
-					text-decoration: none;		
+					text-decoration: none;
+					&:hover {
+						color: #FFFFFF;
+					}						
 				}
 			}
 		}
