@@ -201,12 +201,17 @@ ul.links {
   width: auto; }
   .form figure picture {
     display: block;
+    height: calc(100vh - 40px - 77px);
+    min-height: 460px;
     overflow: hidden; }
     .form figure picture img {
       display: block;
-      height: calc(100vh - 40px - 77px);
-      min-height: 460px;
-      min-width: 100vw; }
+      min-width: 100%;
+      height: auto;
+      left: 50%;
+      position: relative;
+      top: 50%;
+      transform: translate(-50%, -50%); }
   .form h2 {
     color: #ffffff;
     font-size: 60px;
