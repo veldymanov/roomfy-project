@@ -216,10 +216,7 @@ ul.links {
 			fill: transparent;
 			stroke: #ff7800;
 	        stroke-width: 25;    		
-		}
-		@include respond-to(max-width, 550px){
-			top: 24%;			
-		}		
+		}	
 	}
 	div.dropdown {
 		border-radius: 8px;

@@ -303,9 +303,6 @@ ul.links {
       fill: transparent;
       stroke: #ff7800;
       stroke-width: 25; }
-    @media (max-width: 550px) {
-      .choice svg.choiceBtn {
-        top: 24%; } }
   .choice div.dropdown {
     border-radius: 8px;
     height: 0;
