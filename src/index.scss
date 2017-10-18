@@ -229,9 +229,6 @@ ul.links {
 		&.active {
 			height: 180px;
 		}
-		@include respond-to(max-width, 550px){
-		//	top: 60px;			
-		}
 		ul.dropdown-menu {
 			background: rgba(255, 255, 255, 1);
 			height: 180px;
