@@ -103,14 +103,12 @@ ul.links {
 			display: block;
 			height: calc(100vh - 40px - 77px);	
 			min-height: 460px;
-
 			overflow: hidden;
 			img{
 				display: block;
-				
-				min-width: 100%;
 				height: auto;
 				left: 50%;
+				min-width: 100%;
 				position: relative;
 				top: 50%;
 				transform: translate(-50%, -50%);
@@ -150,12 +148,13 @@ ul.links {
 				border: solid 1px #c6c6c6;
 				border-radius: 100px;
 				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+				color: rgb(84, 84, 84);
 				font-family: circular-std-book, sans-serif;
 				font-size: 24px;
 				outline: none;
 				padding: 18px 0 18px 30px;
 				&::placeholder {
-					color: #6E6E6E;
+					color: rgba(180, 180, 180, 1);
 				}		
 			}
 		}
@@ -273,7 +272,6 @@ ul.links {
 			}
 		}
 	}
-
 }
 
 //**********************
